@@ -1,4 +1,4 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Project 2 - Rails Group Project
+# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Project 2 - MEAN & MERN Group Project
 
 **Read this entire document before writing a line of code.**
 
@@ -70,13 +70,12 @@ For the second project, you will use your knowledge of front-end and back-end we
 
 **Your app should have all of the following:**
 
-* **Rails:** Use Rails as the core framework for Ruby.
-* **PostgreSQL:** Use PostgreSQL for your database in development and production.
+* **Express & Node :** Use the Express library on top of Nodejs.
+* **Mongoose / Firebase:** Use Mongoose (or MLab) or Firebase for your database in development and production.
 * **Data Models** Include at least two data models with associations.
 * **Data Validation:** Your application should validate incoming data before entering it into the database.
 * **Error Handling:** Forms in your application should also validate data, handle incorrect inputs, and provide user feedback on the client side.
-* **Testing** Write specs for 25% of your controller functionality, as well as for any model methods.
-* **Views:** Use **partials** to follow DRY (Don’t Repeat Yourself) development in your views.
+* **Views:** Use **partials or components** to follow DRY (Don’t Repeat Yourself) development in your views.
 * **Home & About Pages:** Create a landing page (homepage) that clearly explains your app's value proposition and guides the user through the "get started" funnel. Create an about page that includes photos and brief bios of your team members.
 * **User Experience:** Ensure a pleasing and logical user experience. Use a framework like Bootstrap to enhance and ease your CSS styling.
 * **Responsive Design:** Make sure your app looks great on a phone or tablet.
@@ -87,9 +86,8 @@ For the second project, you will use your knowledge of front-end and back-end we
 **Your app should have 3 out of the 5 following options:**
 
 * **User Login** Make sure you have authentication *and* authorization.
-* **AJAX** Use AJAX to communicate with the server without reloading the page when appropriate.
+* **AJAX / Axios / Fetch** Use AJAX or another similar technology to communicate with the server without reloading the page when appropriate.
 * **External APIs** Use HTTParty or a third-party API back-end gem to integrate third-party data into your app.
-* **Paperclip** Upload files with Paperclip.
 * **JavaScript & jQuery:** Add dynamic client-side behavior with event-driven functionality.
 * **User-Friendly URLs:** Make pretty URLs that don't expose database IDs.
 
@@ -119,9 +117,9 @@ If you want to push yourself and learn something new, optionally consider doing 
 
 ###### When is it due?
 
-* **{{ENTER PROJECT PLANNING DELIVERABLES DATE HERE & TIME}}** - [Project planning deliverables](#project-planning-deliverables) due! Before beginning work on your project, your idea, project scope, and other planning deliverables must be approved by an instructor.
+* **Friday 3:30pm June 16rd** - [Project planning deliverables](#project-planning-deliverables) due! Before beginning work on your project, your idea, project scope, and other planning deliverables must be approved by an instructor.
 
-* **{{ENTER PROJECT PRESENTATION AN DUE DATE HERE}}** - [Completed project deliverables](#completed-project-deliverables) due and presentations!
+* **Friday 10:30 June 23rd ** - [Completed project deliverables](#completed-project-deliverables) due and presentations!
 
 ---
 
@@ -131,55 +129,11 @@ If you want to push yourself and learn something new, optionally consider doing 
 
 * As you make code changes, **frequently commit and push to GitHub**.
 
-
----
-
-## Project Groups
-
-###### Who are my group members and assigned instructor?
-
-#### Group 1 - TBD (INSTRUCTOR)
-
-* TBD
-* TBD
-* TBD
-* TBD
-
-#### Group 2 - TBD (INSTRUCTOR)
-
-* TBD
-* TBD
-* TBD
-* TBD
-
-#### Group 3 - TBD (INSTRUCTOR)
-
-* TBD
-* TBD
-* TBD
-* TBD
-
-#### Group 4 - TBD (INSTRUCTOR)
-
-* TBD
-* TBD
-* TBD
-* TBD
-
-#### Group 5 - TBD (INSTRUCTOR)
-
-* TBD
-* TBD
-* TBD
-* TBD
-
 ---
 
 ## Presentation Guidelines
 
 ###### What should we cover during our presentation?
-
-Each group will present their project on **{{ENTER PRESENTATION DATE HERE}}** starting at ** {{PRESENTATION TIME}}**. Please follow these guidelines:
 
 * Your presentation should include the **motivation** for building this project and a **demo** of the core functionality.
 * **Maximum 20 minutes.**
