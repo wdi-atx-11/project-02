@@ -2,9 +2,9 @@
 import React, {Component} from 'react'
 import LifeEventModel from '../models/LifeEvent'
 import Timeline from '../components/Timeline'
-import CreateLifeEventForm from '../components/CreateEventForm'
+import CreateLifeEventForm from '../components/CreateLifeEventForm'
 
-class Timeline extends Component {
+class TimelineContainer extends Component {
   constructor(){
     super()
     this.state = {
@@ -46,7 +46,7 @@ class Timeline extends Component {
   updateLifeEvent(newLifeEventBody, id) {
     LifeEventModel.update(newLifeEventBody, id).then((res)=> {
       console.log(res);
-      let newLifeEvents = this.state.lifeEvents.map((event) => {
+      let newLifeEvents = this.state.lifeEvents.map((lifeEvent) => {
         return lifeEvent
       });
       newLifeEvents.forEach((item)=>{
