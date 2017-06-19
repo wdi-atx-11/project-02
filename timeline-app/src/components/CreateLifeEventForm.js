@@ -67,7 +67,7 @@ class CreateLifeEventForm extends Component {
             <div className="row">
               <input
                 onChange={ e => { this.setState({ content: e.target.value }) } }
-                value={ this.state.title }
+                value={ this.state.content }
                 className="form-control"
                 type="text"
                 placeholder="Description of life event" />
