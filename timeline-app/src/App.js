@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import { firebase, auth } from './utils/firebase'
 import TimelineContainer from './containers/TimelineContainer'
+import Navbar from './components/Navbar';
 
 
 class App extends Component {
@@ -28,7 +29,6 @@ class App extends Component {
     // tell Firebase auth to log out
     console.log("signing out");
     auth.signOut();
-    console.log(this.state.currentUser);
   }
 
   componentWillMount() {
@@ -46,6 +46,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar
+            currentUser={ this.state.currentUser }
+            loginButtonClicked={ this.loginButtonClicked }
+            logoutButtonClicked={ this.logoutButtonClicked } />
         <Header
           loginButtonClicked={this.loginButtonClicked.bind(this)}
           logoutButtonClicked={this.logoutButtonClicked.bind(this)}

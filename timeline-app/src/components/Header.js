@@ -23,8 +23,7 @@ class Header extends Component{
           <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
         }
           {this.props.currentUser !=null ? <h2>Hello {this.props.currentUser.email}</h2> : <h1>You're a stranger.</h1>}
-          <button onClick={event => this.props.loginButtonClicked(event)}>Login</button>{' '}
-          <button onClick={event => this.props.logoutButtonClicked(event)}>Logout</button>
+          
 
       </div>
 
