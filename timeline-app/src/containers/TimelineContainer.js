@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import LifeEventModel from '../models/LifeEvent'
 import Timeline from '../components/Timeline'
-import CreateEventForm from '../components/CreateEventForm'
+import CreateLifeEventForm from '../components/CreateEventForm'
 
 class Timeline extends Component {
   constructor(){
