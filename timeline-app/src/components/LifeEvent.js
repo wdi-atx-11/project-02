@@ -10,6 +10,7 @@ class LifeEvent extends Component {
           <blockquote>
             <p className="lifeEvent-title">{ this.props.data.title }</p>
             <p className="lifeEvent-content">{ this.props.data.content }</p>
+              
           </blockquote>
         </div>
       </div>

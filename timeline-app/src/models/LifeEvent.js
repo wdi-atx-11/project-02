@@ -20,7 +20,7 @@ class LifeEventModel {
 
   static delete(lifeEvent){
     let request = $.ajax({
-      url: "" + lifeEvent._id,
+      url: "",
       method: 'DELETE'
     })
     return request

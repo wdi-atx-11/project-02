@@ -33,7 +33,12 @@ class Timeline extends Component {
 
   render() {
     const timeline = this.state.timeline.map(lifeEvent => {
-      return <LifeEvent key={ lifeEvent.id } data={ lifeEvent } />
+      return <LifeEvent
+        key={ lifeEvent.id }
+        data={ lifeEvent }
+        onUpdateLifeEvent={this.props.onUpdateLifeEvent}
+        onDeleteLifeEvent={this.props.onDeleteLifeEvent}
+        />
     });
 
     return (

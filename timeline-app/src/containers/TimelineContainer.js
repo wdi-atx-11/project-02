@@ -4,7 +4,7 @@ import LifeEventModel from '../models/LifeEvent'
 import Timeline from '../components/Timeline'
 import CreateLifeEventForm from '../components/CreateLifeEventForm'
 import App from '../App'
-import { auth } from '../utils/firebase'
+import { auth, firebase } from '../utils/firebase'
 
 
 
@@ -38,14 +38,8 @@ class TimelineContainer extends Component {
       this.setState({newTimeline})
     })
   }
-  deleteLifeEvent(lifeEvent) {
-    console.log('deleting life event', lifeEvent)
-    LifeEventModel.delete(lifeEvent).then((res) => {
-        let timeline = this.state.timeline.filter(function(event) {
-          return lifeEvent._id !== res._id
-        });
-        this.setState({timeline})
-    })
+  deleteLifeEvent(ref) {
+     firebase.database().ref('https://project-02-8b8aa.firebaseio.com/timeline/' + ref).remove();
   }
   updateLifeEvent(newLifeEventBody, id) {
     LifeEventModel.update(newLifeEventBody, id).then((res)=> {
