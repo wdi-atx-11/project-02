@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
+import './Navbar.css';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 
@@ -35,6 +35,7 @@ class Navbar extends Component {
               <li className="dropdown">
                 { this.sessionButton() }
                 <ul className="dropdown-menu">
+                  <li><Link to="/profile">View profile</Link></li>
                   <li role="separator" className="divider"></li>
                   <li><LogoutButton { ...this.props }>Log out</LogoutButton></li>
                 </ul>
