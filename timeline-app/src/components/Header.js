@@ -6,7 +6,7 @@ class Header extends Component{
   render(){
     return (
       <header>
-        <h1>Hello World</h1>
+        <h1><Link to={'/timeline'}>My Timeline</Link></h1>
       </header>
     )
   }
