@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-class EventModel {
+class LifeEventModel {
   static all(){
     let request = $.ajax({
       url: "",
@@ -9,32 +9,32 @@ class EventModel {
     return request
   }
 
-  static create(event) {
+  static create(lifeEvent) {
     let request = $.ajax({
       url: "",
       method: 'POST',
-      data: event
+      data: lifeEvent
     })
     return request
   }
 
-  static delete(event){
+  static delete(lifeEvent){
     let request = $.ajax({
-      url: "" + todo._id,
+      url: "" + lifeEvent._id,
       method: 'DELETE'
     })
     return request
   }
 
-  static update(newEventBody, id){
+  static update(newLifeEventBody, id){
     let request = $.ajax({
       url: "",
       method: 'PUT',
-      data: { body: newEventBody }
+      data: { body: newLifeEventBody }
     })
     return request
   }
 
 }
 
-export default EventModel
+export default LifeEventModel

@@ -1,6 +1,6 @@
 // src/containers/TodosContainer.js
 import React, {Component} from 'react'
-import EventModel from '../models/Event'
+import LifeEventModel from '../models/LifeEvent'
 import Timeline from '../components/Timeline'
 import CreateEventForm from '../components/CreateEventForm'
 
@@ -8,54 +8,54 @@ class Timeline extends Component {
   constructor(){
     super()
     this.state = {
-      events: []
+      lifeEvents: []
     }
   }
   componentDidMount(){
     this.fetchData()
   }
   fetchData(){
-    EventModel.all().then( (res) => {
+    LifeEventModel.all().then( (res) => {
       this.setState ({
-        events: res.todos
+        lifeEvents: res.todos
       })
     })
   }
-  createEvent(newBody) {
-    let newEvent = {
+  createLifeEvent(newBody) {
+    let newLifeEvent = {
       body: newBody,
       completed: false
     }
-    EventModel.create(newEvent).then((res) => {
-      console.log('created event', res)
-      let events = this.state.events
-      let newEvents = events.push(res)
-      this.setState({newEvents})
+    LifeEventModel.create(newLifeEvent).then((res) => {
+      console.log('created life event', res)
+      let lifeEvents = this.state.lifeEvents
+      let newLifeEvents = lifeEvents.push(res)
+      this.setState({newLifeEvents})
     })
   }
-  deleteEvent(todo) {
-    console.log('deleting event', todo)
-    EventModel.delete(event).then((res) => {
-        let events = this.state.events.filter(function(event) {
-          return event._id !== res._id
+  deleteLifeEvent(lifeEvent) {
+    console.log('deleting life event', lifeEvent)
+    LifeEventModel.delete(lifeEvent).then((res) => {
+        let lifeEvents = this.state.lifeEvents.filter(function(event) {
+          return lifeEvent._id !== res._id
         });
-        this.setState({events})
+        this.setState({lifeEvents})
     })
   }
 
-  updateEvent(newEventBody, id) {
-    EventModel.update(newEventBody, id).then((res)=> {
+  updateLifeEvent(newLifeEventBody, id) {
+    LifeEventModel.update(newLifeEventBody, id).then((res)=> {
       console.log(res);
-      let newEvents = this.state.events.map((event) => {
-        return event
+      let newLifeEvents = this.state.lifeEvents.map((event) => {
+        return lifeEvent
       });
-      newEvents.forEach((item)=>{
+      newLifeEvents.forEach((item)=>{
         if(item._id === id){
-          item.body = newEventBody
+          item.body = newLifeEventBody
         }
       })
       this.setState({
-          newEvents
+          newLifeEvents
       })
     })
   }
@@ -63,12 +63,12 @@ class Timeline extends Component {
   render(){
     return (
       <div className='timelineContainer'>
-        <CreateEventForm
-          createEvent={this.createEvent.bind(this)} />
+        <CreateLifeEventForm
+          createLifeEvent={this.createLifeEvent.bind(this)} />
         <Timeline
-          events={this.state.events}
-          onUpdateEvent={this.updateEvent.bind(this)}
-          onDeleteEvent={this.deleteEvent.bind(this)} />
+          lifeEvents={this.state.lifeEvents}
+          onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
+          onDeleteLifeEvent={this.deleteLifeEvent.bind(this)} />
       </div>
     )
   }
