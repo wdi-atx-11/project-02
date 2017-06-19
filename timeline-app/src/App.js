@@ -4,6 +4,7 @@ import Header from './components/Header'
 import { firebase, auth } from './utils/firebase'
 import TimelineContainer from './containers/TimelineContainer'
 import Navbar from './components/Navbar';
+import './App.css';
 
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
 
 
   logoutButtonClicked(e) {
-    e.preventDefault();
+    // e.preventDefault();
     // tell Firebase auth to log out
     console.log("signing out");
     auth.signOut();
@@ -51,8 +52,6 @@ class App extends Component {
             loginButtonClicked={ this.loginButtonClicked }
             logoutButtonClicked={ this.logoutButtonClicked } />
         <Header
-          loginButtonClicked={this.loginButtonClicked.bind(this)}
-          logoutButtonClicked={this.logoutButtonClicked.bind(this)}
           currentUser={this.state.currentUser} />
         {this.props.children}
       </div>

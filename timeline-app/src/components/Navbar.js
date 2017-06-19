@@ -11,7 +11,7 @@ class Navbar extends Component {
     } else {
       return (
         <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" /> { this.props.currentUser.displayName } <span className="caret"></span>
+          <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" /> { this.props.currentUser.email } <span className="caret"></span>
         </a>
       )
     }
@@ -28,14 +28,13 @@ class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link className="navbar-brand" to="/">Quote Machine</Link>
+            <Link className="navbar-brand" to="/">Timeline</Link>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
                 { this.sessionButton() }
                 <ul className="dropdown-menu">
-                  <li><Link to="/profile">View profile</Link></li>
                   <li role="separator" className="divider"></li>
                   <li><LogoutButton { ...this.props }>Log out</LogoutButton></li>
                 </ul>
