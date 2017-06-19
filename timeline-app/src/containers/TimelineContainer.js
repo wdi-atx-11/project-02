@@ -12,7 +12,7 @@ class TimelineContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      lifeEvents: [],
+      timeline: [],
       currentUser: auth.currentUser
     }
   }
@@ -22,7 +22,7 @@ class TimelineContainer extends Component {
   fetchData(){
     LifeEventModel.all().then( (res) => {
       this.setState ({
-        lifeEvents: res.todos
+        timeline: res.timeline
       })
     })
   }
@@ -33,33 +33,33 @@ class TimelineContainer extends Component {
     }
     LifeEventModel.create(newLifeEvent).then((res) => {
       console.log('created life event', res)
-      let lifeEvents = this.state.lifeEvents
-      let newLifeEvents = lifeEvents.push(res)
-      this.setState({newLifeEvents})
+      let timeline = this.state.timeline
+      let newTimeline = timeline.push(res)
+      this.setState({newTimeline})
     })
   }
   deleteLifeEvent(lifeEvent) {
     console.log('deleting life event', lifeEvent)
     LifeEventModel.delete(lifeEvent).then((res) => {
-        let lifeEvents = this.state.lifeEvents.filter(function(event) {
+        let timeline = this.state.timeline.filter(function(event) {
           return lifeEvent._id !== res._id
         });
-        this.setState({lifeEvents})
+        this.setState({timeline})
     })
   }
   updateLifeEvent(newLifeEventBody, id) {
     LifeEventModel.update(newLifeEventBody, id).then((res)=> {
       console.log(res);
-      let newLifeEvents = this.state.lifeEvents.map((lifeEvent) => {
+      let newTimeline = this.state.timeline.map((lifeEvent) => {
         return lifeEvent
       });
-      newLifeEvents.forEach((item)=>{
+      newTimeline.forEach((item)=>{
         if(item._id === id){
           item.body = newLifeEventBody
         }
       })
       this.setState({
-          newLifeEvents
+          newTimeline
       })
     })
   }
@@ -74,9 +74,8 @@ class TimelineContainer extends Component {
             <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
         }
           <Timeline
-            lifeEvents={this.state.lifeEvents}
-            onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
-            onDeleteLifeEvent={this.deleteLifeEvent.bind(this)} />
+            timeline={this.state.timeline}
+             />
       </div>
     )
   }

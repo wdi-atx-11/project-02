@@ -22,26 +22,26 @@ class CreateLifeEventForm extends Component {
     handleSubmit(e) {
       e.preventDefault();
       console.log('title: ', this.state.title, 'content: ', this.state.content);
-
-      if (!this.props.currentUser) {
-        // @todo Return error message
-        console.log('User not logged in');
-        return;
-      }
-      if (!this.state.title || !this.state.content) {
-        // @todo Return error message
-        console.log('Missing data');
-        return;
-      }
+      //
+      // if (!this.props.currentUser) {
+      //   // @todo Return error message
+      //   console.log('User not logged in');
+      //   return;
+      // }
+      // if (!this.state.title || !this.state.content) {
+      //   // @todo Return error message
+      //   console.log('Missing data');
+      //   return;
+      // }
 
       this.ref.push({
-        user: {
-          uid: this.props.currentUser.uid,
-          photoURL: this.props.currentUser.photoURL,
-          displayName: this.props.currentUser.displayName
-        },
-        text: this.state.title,
-        author: this.state.content,
+        // user: {
+        //   uid: this.props.currentUser.uid,
+        //   photoURL: this.props.currentUser.photoURL,
+        //   displayName: this.props.currentUser.displayName
+        // },
+        title: this.state.title,
+        content: this.state.content,
         // This allows us to return data in desc order in Firebase
         '.priority':  0 - Date.now()
       });
