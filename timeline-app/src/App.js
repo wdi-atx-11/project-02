@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
 import { firebase, auth } from './utils/firebase'
+import TimelineContainer from './containers/TimelineContainer'
 
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
     // tell Firebase auth to log out
     console.log("signing out");
     auth.signOut();
-    console.log(this.state.currentUser)
+    console.log(this.state.currentUser);
   }
 
   componentWillMount() {
@@ -43,16 +44,15 @@ class App extends Component {
   }
 
   render() {
-  return (
-    <div className="App">
-      <Header
-        loginButtonClicked={this.loginButtonClicked.bind(this)}
-        logoutButtonClicked={this.logoutButtonClicked.bind(this)}
-        currentUser={this.state.currentUser}
-      />
-      {this.props.children}
-    </div>
-  );
+    return (
+      <div className="App">
+        <Header
+          loginButtonClicked={this.loginButtonClicked.bind(this)}
+          logoutButtonClicked={this.logoutButtonClicked.bind(this)}
+          currentUser={this.state.currentUser} />
+        {this.props.children}
+      </div>
+    );
   }
 }
 

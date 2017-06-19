@@ -37,5 +37,6 @@ const firebaseListToArray = (firebaseObjectList) => {
 const database = firebase.database();
 const auth = firebase.auth();
 
+
 export { firebase, database, auth };
 export { firebaseListToArray };

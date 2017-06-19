@@ -1,6 +1,8 @@
 // src/components/Tineline.js
 import React, {Component} from 'react'
 import LifeEvent from './LifeEvent'
+import { auth } from '../utils/firebase'
+
 
 class Timeline extends Component {
   render(){

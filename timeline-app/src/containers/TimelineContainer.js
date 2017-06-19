@@ -3,12 +3,17 @@ import React, {Component} from 'react'
 import LifeEventModel from '../models/LifeEvent'
 import Timeline from '../components/Timeline'
 import CreateLifeEventForm from '../components/CreateLifeEventForm'
+import App from '../App'
+import { auth } from '../utils/firebase'
+
+
 
 class TimelineContainer extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
-      lifeEvents: []
+      lifeEvents: [],
+      currentUser: auth.currentUser
     }
   }
   componentDidMount(){
@@ -42,7 +47,6 @@ class TimelineContainer extends Component {
         this.setState({lifeEvents})
     })
   }
-
   updateLifeEvent(newLifeEventBody, id) {
     LifeEventModel.update(newLifeEventBody, id).then((res)=> {
       console.log(res);
@@ -63,12 +67,16 @@ class TimelineContainer extends Component {
   render(){
     return (
       <div className='timelineContainer'>
-        <CreateLifeEventForm
-          createLifeEvent={this.createLifeEvent.bind(this)} />
-        <Timeline
-          lifeEvents={this.state.lifeEvents}
-          onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
-          onDeleteLifeEvent={this.deleteLifeEvent.bind(this)} />
+        {
+          (this.state.currentUser != null) ?
+          <CreateLifeEventForm
+            createLifeEvent={this.createLifeEvent.bind(this)} /> :
+            <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
+        }
+          <Timeline
+            lifeEvents={this.state.lifeEvents}
+            onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
+            onDeleteLifeEvent={this.deleteLifeEvent.bind(this)} />
       </div>
     )
   }
