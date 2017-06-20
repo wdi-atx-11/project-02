@@ -41,7 +41,7 @@ class TimelineContainer extends Component {
   deleteLifeEvent(lifeEvent) {
     console.log('deleting lifeEvent', lifeEvent)
     LifeEventModel.delete(lifeEvent).then((res) => {
-        let timeline = this.state.timeline.filter(function(todo) {
+        let timeline = this.state.timeline.filter(function(lifeEvent) {
           return lifeEvent._id !== res._id
         });
         this.setState({timeline})

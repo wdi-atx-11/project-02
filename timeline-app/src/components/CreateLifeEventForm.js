@@ -57,20 +57,20 @@ class CreateLifeEventForm extends Component {
         <section className="col-md-4 col-sm-12 add-quote">
           <form onSubmit={ this.handleSubmit.bind(this) } className="form-add-lifeEvent">
             <div className="row">
-              <textarea
+              <input
                 onChange={ e => { this.setState({ title: e.target.value }) } }
                 value={ this.state.title }
                 className="form-control"
                 rows="3"
-                placeholder="Meaningful life event"></textarea>
+                placeholder="Meaningful life event" />
             </div>
             <div className="row">
-              <input
+              <textarea
                 onChange={ e => { this.setState({ content: e.target.value }) } }
                 value={ this.state.content }
                 className="form-control"
                 type="text"
-                placeholder="Description of life event" />
+                placeholder="Description of life event"></textarea>
             </div>
             <div className="row">
               <button className="btn btn-primary">Add Life Event</button>
