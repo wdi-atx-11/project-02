@@ -27,15 +27,16 @@ class TimelineContainer extends Component {
       })
     })
   }
-  createLifeEvent(newBody) {
+  createLifeEvent(title, content) {
     let newLifeEvent = {
-      body: newBody,
-      completed: false
+      title: title,
+      content: content
     }
     LifeEventModel.create(newLifeEvent).then((res) => {
       console.log('created life event', res)
-      let timeline = this.state.timeline
-      let newTimeline = timeline.push(res)
+      console.log(newLifeEvent)
+      let lifeEvents = this.state.lifeEvents
+      let newTimeline = lifeEvents.push(res)
       this.setState({newTimeline})
     })
   }

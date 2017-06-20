@@ -4,7 +4,6 @@ import EditLifeEventForm from './EditLifeEventForm'
 
 class LifeEvent extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="row lifeEvent">
         <div className="col-md-11 col-sm-11 lifeEvent-text">
@@ -21,7 +20,7 @@ class LifeEvent extends Component {
           </blockquote>
 
           <EditLifeEventForm
-            lifeEvent={this.props.data}
+            lifeEvent={this.props.lifeEvent}
             onUpdateLifeEvent={this.props.onUpdateLifeEvent}
           />
 
