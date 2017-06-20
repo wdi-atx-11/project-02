@@ -13,7 +13,7 @@ class TimelineContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      timeline: [],
+      lifeEvents: [],
       currentUser: auth.currentUser
     }
   }
@@ -23,7 +23,7 @@ class TimelineContainer extends Component {
   fetchData(){
     LifeEventModel.all().then( (res) => {
       this.setState ({
-        timeline: res.timeline
+        lifeEvents: res.lifeEvents
       })
     })
   }
@@ -68,7 +68,7 @@ class TimelineContainer extends Component {
   }
 
   render(){
-    console.log (this.state)
+    console.log (this.state.lifeEvents)
     return (
       <div className='timelineContainer'>
         {
@@ -78,7 +78,7 @@ class TimelineContainer extends Component {
             <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
         }
           <Timeline
-            timeline={this.state.timeline}
+            lifeEvents={this.state.lifeEvents}
             onDeleteLifeEvent={this.deleteLifeEvent.bind(this)}
             onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
              />

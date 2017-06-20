@@ -6,7 +6,7 @@ import { database, firebaseListToArray } from '../utils/firebase'
 
 class Timeline extends Component {
   render() {
-    let timeline = this.props.timeline.map(lifeEvent => {
+    let lifeEventsArray = this.props.lifeEvents.map(lifeEvent => {
       return <LifeEvent
         key={ lifeEvent._id }
         data={ lifeEvent }
@@ -17,7 +17,7 @@ class Timeline extends Component {
 
     return (
       <section className="col-md-8 col-sm-12 timeline">
-        { timeline }
+        { lifeEventsArray }
       </section>
     );
   }
