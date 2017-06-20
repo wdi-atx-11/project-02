@@ -10,9 +10,21 @@ import './App.css';
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = ({
-      loggedIn: this.props.currentUser
-    })
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  componentWillMount() {
+    auth.onAuthStateChanged(currentUser => {
+      if (currentUser) {
+        console.log('Logged in:', currentUser);
+        // set currentUser in App component state
+        this.setState({ currentUser });
+      } else {
+        this.setState({ currentUser: null });
+      }
+    });
   }
 
   loginButtonClicked(e) {
@@ -30,18 +42,6 @@ class App extends Component {
     // tell Firebase auth to log out
     console.log("signing out");
     auth.signOut();
-  }
-
-  componentWillMount() {
-    auth.onAuthStateChanged(currentUser => {
-      if (currentUser) {
-        console.log('Logged in:', currentUser);
-        // set currentUser in App component state
-        this.setState({ currentUser });
-      } else {
-        this.setState({ currentUser: null });
-      }
-    });
   }
 
   render() {

@@ -11,7 +11,7 @@ class Navbar extends Component {
     } else {
       return (
         <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" /> { this.props.currentUser.email } <span className="caret"></span>
+          <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" /> { this.props.currentUser.email } is logged in <span className="caret"></span>
         </a>
       )
     }
