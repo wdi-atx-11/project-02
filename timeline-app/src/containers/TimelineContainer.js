@@ -28,7 +28,6 @@ class TimelineContainer extends Component {
     })
   }
   createLifeEvent(newLifeEvent) {
-    console.log("CONTAINER's newLifeEvent: ", newLifeEvent);
     LifeEventModel.create(newLifeEvent).then((res) => {
       console.log('created life event', res)
       let lifeEvents = this.state.lifeEvents
@@ -39,7 +38,7 @@ class TimelineContainer extends Component {
   deleteLifeEvent(lifeEvent) {
     console.log('deleting lifeEvent', lifeEvent)
     LifeEventModel.delete(lifeEvent).then((res) => {
-        let timeline = this.state.timeline.filter(function(lifeEvent) {
+        let timeline = this.state.lifeEvents.filter(function(lifeEvent) {
           return lifeEvent._id !== res._id
         });
         this.setState({timeline})
@@ -49,7 +48,7 @@ class TimelineContainer extends Component {
   updateLifeEvent(newLifeEventTitle, newLifeEventContent, id) {
     LifeEventModel.update(newLifeEventTitle, newLifeEventContent, id).then((res)=> {
       console.log(res);
-      let newTimeline = this.state.timeline.map((lifeEvent) => {
+      let newTimeline = this.state.lifeEvents.map((lifeEvent) => {
         return lifeEvent
       });
       newTimeline.forEach((data)=>{

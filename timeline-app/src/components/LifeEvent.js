@@ -14,7 +14,7 @@ class LifeEvent extends Component {
             <p className="lifeEvent-content">{ this.props.data.content }</p>
               <button
               className='btn btn-xs btn-danger'
-              onClick={() => this.props.onDeleteLifeEvent(this.props.lifeEvent)}>
+              onClick={() => this.props.onDeleteLifeEvent(this.props.data)}>
                 Delete
             </button>
           </blockquote>

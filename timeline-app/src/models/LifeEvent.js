@@ -20,7 +20,7 @@ class LifeEventModel {
 
   static delete(lifeEvent){
     let request = $.ajax({
-      url: "https://timeline--app.herokuapp.com/lifeevents" + lifeEvent._id,
+      url: "https://timeline--app.herokuapp.com/lifeevents/" + lifeEvent._id,
       method: 'DELETE'
     })
     return request
@@ -30,7 +30,7 @@ class LifeEventModel {
     let request = $.ajax({
       url: `https://timeline--app.herokuapp.com/lifeevents${id}`,
       method: 'PUT',
-      data: { body: newLifeEvent }
+      data: { title: newLifeEvent }
     })
     return request
   }
