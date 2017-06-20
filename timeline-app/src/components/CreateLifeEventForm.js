@@ -4,27 +4,22 @@ import { database } from '../utils/firebase';
 
 // inside src/components/CreateLifeEventForm.js
 class CreateLifeEventForm extends Component {
-  constructor(){
+  constructor(props){
     // use Component's constructor
-    super()
+    super(props)
     // set initial state
     this.state = {
-        title: '',
-        content: ''
+        title: ''
     }
   }
 
     onFormSubmit(e){
     e.preventDefault()
-    let newLifeEvent = {
-      title: this.state.title,
-      content: this.state.content
-    }
+    let newLifeEvent = this.state
     this.props.createLifeEvent(newLifeEvent)
-    console.log(newLifeEvent)
+    console.log('new life event', newLifeEvent)
     this.setState({
-        title: '',
-        content: ''
+        title: ''
     })
 }
 
@@ -40,14 +35,7 @@ class CreateLifeEventForm extends Component {
                 rows="3"
                 placeholder="Meaningful life event" />
             </div>
-            <div className="row">
-              <textarea
-                onChange={ e => { this.setState({ content: e.target.value }) } }
-                value={ this.state.content }
-                className="form-control"
-                type="text"
-                placeholder="Description of life event"></textarea>
-            </div>
+            
             <div className="row">
               <button className="btn btn-primary">Add Life Event</button>
             </div>
