@@ -55,10 +55,10 @@ class TimelineContainer extends Component {
       let newTimeline = this.state.timeline.map((lifeEvent) => {
         return lifeEvent
       });
-      newTimeline.forEach((lifeEvent)=>{
-        if(lifeEvent._id === id){
-          lifeEvent.title = newLifeEventTitle,
-          lifeEvent.content = newLifeEventContent
+      newTimeline.forEach((data)=>{
+        if(data._id === id){
+          data.title = newLifeEventTitle,
+          data.content = newLifeEventContent
         }
       })
       this.setState({

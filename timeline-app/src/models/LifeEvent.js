@@ -31,8 +31,8 @@ class LifeEventModel {
       url: `https://project-02-8b8aa.firebaseio.com/timeline/${id}/.json/`,
       method: 'PUT',
       data: {
-        title: newLifeEventTitle,
-        content: newLifeEventContent
+        'title': 'newLifeEventTitle',
+        'content': 'newLifeEventContent'
       }
     })
     return request

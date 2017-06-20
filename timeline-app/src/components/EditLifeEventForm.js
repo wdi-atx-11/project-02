@@ -19,7 +19,7 @@ class EditLifeEventForm extends Component {
   onFormSubmit(event){
     event.preventDefault()
     console.log('edit todo form submitted')
-    this.props.onUpdateLifeEvent(this.state.updatedLifeEventBody, this.props.lifeEvent._id)
+    this.props.onUpdateLifeEvent(this.state.updatedLifeEventTitle, this.state.updatedLifeEventContent, this.props.lifeEvent._id)
     this.setState({
       updatedLifeEventBody: ''
     })
