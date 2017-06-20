@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import LifeEventModel from '../models/LifeEvent'
 import Timeline from '../components/Timeline'
 import CreateLifeEventForm from '../components/CreateLifeEventForm'
+import EditLifeEventForm from '../components/EditLifeEventForm'
 import App from '../App'
 import { auth, firebase } from '../utils/firebase'
 
@@ -48,15 +49,16 @@ class TimelineContainer extends Component {
     })
   }
 
-  updateLifeEvent(newLifeEventBody, id) {
-    LifeEventModel.update(newLifeEventBody, id).then((res)=> {
+  updateLifeEvent(newLifeEventTitle, newLifeEventContent, id) {
+    LifeEventModel.update(newLifeEventTitle, newLifeEventContent, id).then((res)=> {
       console.log(res);
       let newTimeline = this.state.timeline.map((lifeEvent) => {
         return lifeEvent
       });
-      newTimeline.forEach((item)=>{
-        if(item._id === id){
-          item.body = newLifeEventBody
+      newTimeline.forEach((lifeEvent)=>{
+        if(lifeEvent._id === id){
+          lifeEvent.title = newLifeEventTitle,
+          lifeEvent.content = newLifeEventContent
         }
       })
       this.setState({
@@ -77,6 +79,7 @@ class TimelineContainer extends Component {
           <Timeline
             timeline={this.state.timeline}
             onDeleteLifeEvent={this.deleteLifeEvent.bind(this)}
+            onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
              />
       </div>
     )

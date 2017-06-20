@@ -18,7 +18,13 @@ class LifeEvent extends Component {
                 Delete
             </button>
           </blockquote>
-        </div>
+
+          <EditLifeEventForm
+            lifeEvent={this.props.data}
+            onUpdateLifeEvent={this.props.onUpdateLifeEvent}
+          />
+
+      </div>
       </div>
     );
   }

@@ -26,11 +26,14 @@ class LifeEventModel {
     return request
   }
 
-  static update(newLifeEventBody, id){
+  static update(newLifeEventTitle, newLifeEventContent, id){
     let request = $.ajax({
-      url: "",
+      url: `https://project-02-8b8aa.firebaseio.com/timeline/${id}/.json/`,
       method: 'PUT',
-      data: { body: newLifeEventBody }
+      data: {
+        title: newLifeEventTitle,
+        content: newLifeEventContent
+      }
     })
     return request
   }
