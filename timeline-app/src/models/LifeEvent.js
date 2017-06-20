@@ -3,37 +3,34 @@ import $ from 'jquery'
 class LifeEventModel {
   static all(){
     let request = $.ajax({
-      url: "",
+      url: "https://timeline--app.herokuapp.com/lifeevents",
       method: 'GET'
     })
     return request
   }
 
-  static create(lifeEvent) {
+  static create(todo) {
     let request = $.ajax({
-      url: "",
+      url: "https://timeline--app.herokuapp.com/lifeevents",
       method: 'POST',
-      data: lifeEvent
+      data: todo
     })
     return request
   }
 
-  static delete(data, id){
+  static delete(lifeEvent){
     let request = $.ajax({
-      url: `https://project-02-8b8aa.firebaseio.com/timeline/${data.id}/.json/`,
+      url: "https://timeline--app.herokuapp.com/lifeevents" + lifeEvent._id,
       method: 'DELETE'
     })
     return request
   }
 
-  static update(newLifeEventTitle, newLifeEventContent, id){
+  static update(newLifeEvent, id){
     let request = $.ajax({
-      url: `https://project-02-8b8aa.firebaseio.com/timeline/${id}/.json/`,
+      url: `https://timeline--app.herokuapp.com/lifeevents${id}`,
       method: 'PUT',
-      data: {
-        'title': 'newLifeEventTitle',
-        'content': 'newLifeEventContent'
-      }
+      data: { body: newLifeEvent }
     })
     return request
   }

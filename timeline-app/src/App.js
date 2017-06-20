@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
 import { firebase, auth } from './utils/firebase'
-import TimelineContainer from './containers/TimelineContainer'
 import Navbar from './components/Navbar';
 import './App.css';
 

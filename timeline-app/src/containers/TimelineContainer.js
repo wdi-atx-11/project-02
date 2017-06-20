@@ -57,7 +57,7 @@ class TimelineContainer extends Component {
       });
       newTimeline.forEach((data)=>{
         if(data._id === id){
-          data.title = newLifeEventTitle,
+          data.title = newLifeEventTitle
           data.content = newLifeEventContent
         }
       })
@@ -68,6 +68,7 @@ class TimelineContainer extends Component {
   }
 
   render(){
+    console.log (this.state)
     return (
       <div className='timelineContainer'>
         {
