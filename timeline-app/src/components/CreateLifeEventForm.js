@@ -9,17 +9,22 @@ class CreateLifeEventForm extends Component {
     super(props)
     // set initial state
     this.state = {
-        title: ''
+        title: '',
+        content: ''
     }
   }
 
     onFormSubmit(e){
     e.preventDefault()
-    let newLifeEvent = this.state
+    let newLifeEvent = {
+      title: this.state.title,
+      content: this.state.content
+    }
     this.props.createLifeEvent(newLifeEvent)
-    console.log('new life event', newLifeEvent)
+
     this.setState({
-        title: ''
+        title: '',
+        content: ''
     })
 }
 
@@ -35,7 +40,15 @@ class CreateLifeEventForm extends Component {
                 rows="3"
                 placeholder="Meaningful life event" />
             </div>
-            
+            <div className="row">
+              <input
+                onChange={ e => { this.setState({ content: e.target.value }) } }
+                value={ this.state.content }
+                className="form-control"
+                rows="3"
+                placeholder="What happened..." />
+            </div>
+
             <div className="row">
               <button className="btn btn-primary">Add Life Event</button>
             </div>

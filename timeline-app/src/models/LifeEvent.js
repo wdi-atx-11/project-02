@@ -9,11 +9,11 @@ class LifeEventModel {
     return request
   }
 
-  static create(title, content) {
+  static create(newLifeEvent) {
     let request = $.ajax({
       url: "https://timeline--app.herokuapp.com/lifeevents",
       method: 'POST',
-      data: {title, content}
+      data: newLifeEvent
     })
     return request
   }
