@@ -30,7 +30,7 @@ class LifeEventModel {
     let request = $.ajax({
       url: `https://timeline--app.herokuapp.com/lifeevents${id}`,
       method: 'PUT',
-      data: { title: newLifeEvent }
+      data: { newLifeEvent }
     })
     return request
   }

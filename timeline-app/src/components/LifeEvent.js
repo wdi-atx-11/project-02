@@ -20,7 +20,7 @@ class LifeEvent extends Component {
           </blockquote>
 
           <EditLifeEventForm
-            lifeEvent={this.props.lifeEvent}
+            lifeEvent={this.props.data}
             onUpdateLifeEvent={this.props.onUpdateLifeEvent}
           />
 

@@ -11,30 +11,32 @@ class EditLifeEventForm extends Component {
       updatedLifeEventContent: ''
     }
   }
-  onInputChange(event){
-    console.log('changing a lifeEvent!')
+  onFormSubmit(e){
+    e.preventDefault()
+    console.log('edit life event form submitted')
+    let updatedLifeEvent = {
+      title: this.state.title,
+      content: this.state.content
+    }
+    this.props.onUpdateLifeEvent(this.state.updatedLifeEvent, this.props.lifeEvent._id)
     this.setState({
-      updatedLifeEventTitle: event.target.value
-    })
-  }
-  onFormSubmit(event){
-    event.preventDefault()
-    console.log('edit todo form submitted')
-    this.props.onUpdateLifeEvent(this.state.updatedLifeEventTitle, this.props.lifeEvent._id)
-    this.setState({
-      updatedLifeEventTitle: ''
+      updatedLifeEvent: ''
     })
   }
   render(){
     return (
-      <div className='editLifeEventForm' data-lifeEvents-index={this.props.data}>
-        <form onSubmit={event => this.onFormSubmit(event)}>
+      <div className='editLifeEventForm' data-lifeEvents-index={this.props.lifeEvent._id}>
+        <form onSubmit={e => this.onFormSubmit(e)}>
           <input
-            onChange={event => this.onInputChange(event)}
+            onChange={e => { this.setState({ title: e.target.value }) }}
             placeholder='Title...'
             type='text'
-            value={this.state.updatedLifeEventTitle} />
-
+            value={this.state.title} />
+          <input
+            onChange={e => { this.setState({ content: e.target.value }) } }
+            placeholder='Content...'
+            type='text'
+            value={this.state.content} />
           <button type='submit'>Update!</button>
         </form>
       </div>
