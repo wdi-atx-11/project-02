@@ -35,8 +35,10 @@ class Navbar extends Component {
               <li className="dropdown">
                 { this.sessionButton() }
                 <ul className="dropdown-menu">
-                  <li><Link to="/profile">View profile</Link></li>
+                  <li><Link to="/">Home</Link></li>
                   <li role="separator" className="divider"></li>
+                    <li><Link to="/timeline">Timeline</Link></li>
+                    <li role="separator" className="divider"></li>
                   <li><LogoutButton { ...this.props }>Log out</LogoutButton></li>
                 </ul>
               </li>

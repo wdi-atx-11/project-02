@@ -38,9 +38,16 @@ class TimelineContainer extends Component {
       this.setState({newTimeline})
     })
   }
-  deleteLifeEvent(ref) {
-     firebase.database().ref('https://project-02-8b8aa.firebaseio.com/timeline/' + ref).remove();
+  deleteLifeEvent(lifeEvent) {
+    console.log('deleting lifeEvent', lifeEvent)
+    LifeEventModel.delete(lifeEvent).then((res) => {
+        let timeline = this.state.timeline.filter(function(todo) {
+          return lifeEvent._id !== res._id
+        });
+        this.setState({timeline})
+    })
   }
+
   updateLifeEvent(newLifeEventBody, id) {
     LifeEventModel.update(newLifeEventBody, id).then((res)=> {
       console.log(res);
@@ -69,6 +76,7 @@ class TimelineContainer extends Component {
         }
           <Timeline
             timeline={this.state.timeline}
+            onDeleteLifeEvent={this.deleteLifeEvent.bind(this)}
              />
       </div>
     )

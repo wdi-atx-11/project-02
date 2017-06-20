@@ -18,9 +18,9 @@ class LifeEventModel {
     return request
   }
 
-  static delete(lifeEvent){
+  static delete(lifeEvent, id){
     let request = $.ajax({
-      url: "",
+      url: `https://project-02-8b8aa.firebaseio.com/timeline/.json${id}`,
       method: 'DELETE'
     })
     return request
