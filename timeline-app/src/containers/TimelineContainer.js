@@ -45,20 +45,18 @@ class TimelineContainer extends Component {
     })
   }
 
-  updateLifeEvent(newLifeEventTitle, id) {
-    LifeEventModel.update(newLifeEventTitle, id).then((res)=> {
+  updateLifeEvent(updatedLifeEvent, id) {
+    LifeEventModel.update(updatedLifeEvent, id).then((res)=> {
       console.log(res);
       let newLifeEvents = this.state.lifeEvents.map((lifeEvent) => {
         return lifeEvent
       });
-      newLifeEvents.forEach((item)=>{
-        if(item._id === id){
-          item.title = newLifeEventTitle
+      newLifeEvents.forEach((lifeEvent)=>{
+        if(lifeEvent._id === id){
+          lifeEvent = updatedLifeEvent
         }
       })
-      this.setState({
-          newLifeEvents
-      })
+      this.setState({newLifeEvents})
     })
   }
 
