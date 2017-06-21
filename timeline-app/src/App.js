@@ -5,7 +5,6 @@ import { firebase, auth } from './utils/firebase'
 import Navbar from './components/Navbar';
 import './App.css';
 
-
 class App extends Component {
   constructor(props){
     super(props)
@@ -30,17 +29,15 @@ class App extends Component {
     e.preventDefault();
     // set up provider
     const provider = new firebase.auth.GoogleAuthProvider();
-    console.log("signing in")
     // tell Firebase auth to log in with a popup and that provider
     auth.signInWithPopup(provider);
   }
 
 
   logoutButtonClicked(e) {
-    // e.preventDefault();
     // tell Firebase auth to log out
-    console.log("signing out");
     auth.signOut();
+    this.setState({ currentUser: null });
   }
 
   render() {

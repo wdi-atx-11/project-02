@@ -2,12 +2,13 @@
 import React, {Component} from 'react'
 
 class EditLifeEventForm extends Component {
-  constructor(){
+  constructor(props){
     // use Component's constructor
-    super()
+    super(props)
     // set initial state
     this.state = {
-      updatedLifeEvent: {title: '', content: ''}
+        title: '',
+        content: ''
     }
   }
   onTitleChange(e){
@@ -27,25 +28,28 @@ class EditLifeEventForm extends Component {
       content: this.state.content
     }
     this.props.onUpdateLifeEvent(updatedLifeEvent, this.props.lifeEvent._id)
+
     this.setState({
-      title: '', content: ''
+      title: '',
+      content: ''
     })
   }
   render(){
     return (
       <div className='editLifeEventForm' data-lifeEvents-index={this.props.lifeEvent._id}>
         <form onSubmit={event => this.onFormSubmit(event)}>
-          <input
+          <textarea
             onChange={event => this.onTitleChange(event)}
             placeholder='Update Title...'
             type='text'
-            value={this.state.title} />
-            <input
+            value={this.state.title} /> {'  '}
+            <textarea
               onChange={event => this.onContentChange(event)}
               placeholder='Update Content...'
               type='text'
-              value={this.state.content} />
-          <button type='submit'>Update!</button>
+              value={this.state.content} />{'  '}
+              <br />
+          <button className="btn btn-primary" type='submit'>Update!</button>
         </form>
       </div>
     )

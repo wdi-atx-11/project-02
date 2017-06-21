@@ -1,6 +1,5 @@
 // src/components/CreateTodoForm.js
 import React, {Component} from 'react';
-import { database } from '../utils/firebase';
 
 // inside src/components/CreateLifeEventForm.js
 class CreateLifeEventForm extends Component {
@@ -20,7 +19,7 @@ class CreateLifeEventForm extends Component {
       title: this.state.title,
       content: this.state.content
     }
-    this.props.createLifeEvent(newLifeEvent)
+    this.props.onCreateLifeEvent(newLifeEvent)
 
     this.setState({
         title: '',
@@ -32,6 +31,7 @@ class CreateLifeEventForm extends Component {
       return (
         <section className="col-md-4 col-sm-12 add-quote">
           <form onSubmit={ e => this.onFormSubmit(e) } className="form-add-lifeEvent">
+
             <div className="row">
               <input
                 onChange={ e => { this.setState({ title: e.target.value }) } }
@@ -40,6 +40,7 @@ class CreateLifeEventForm extends Component {
                 rows="3"
                 placeholder="Meaningful life event" />
             </div>
+
             <div className="row">
               <input
                 onChange={ e => { this.setState({ content: e.target.value }) } }

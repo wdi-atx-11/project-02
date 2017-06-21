@@ -1,7 +1,6 @@
 // src/components/Tineline.js
 import React, {Component} from 'react'
 import LifeEvent from './LifeEvent'
-import { database, firebaseListToArray } from '../utils/firebase'
 
 
 class Timeline extends Component {
@@ -12,7 +11,7 @@ class Timeline extends Component {
         data={ lifeEvent }
         onUpdateLifeEvent={this.props.onUpdateLifeEvent}
         onDeleteLifeEvent={this.props.onDeleteLifeEvent}
-        />
+      />
     });
 
     return (
