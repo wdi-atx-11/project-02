@@ -26,11 +26,11 @@ class LifeEventModel {
     return request
   }
 
-  static update(newLifeEvent, id){
+  static update(newLifeEventTitle, id){
     let request = $.ajax({
-      url: `https://timeline--app.herokuapp.com/lifeevents${id}`,
+      url: `https://timeline--app.herokuapp.com/lifeevents/${id}`,
       method: 'PUT',
-      data: { newLifeEvent }
+      data: { title: newLifeEventTitle }
     })
     return request
   }

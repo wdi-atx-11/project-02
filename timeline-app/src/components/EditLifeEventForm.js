@@ -7,36 +7,32 @@ class EditLifeEventForm extends Component {
     super()
     // set initial state
     this.state = {
-      updatedLifeEventTitle: '',
-      updatedLifeEventContent: ''
+      updatedLifeEventTitle: ''
     }
   }
-  onFormSubmit(e){
-    e.preventDefault()
-    console.log('edit life event form submitted')
-    let updatedLifeEvent = {
-      title: this.state.title,
-      content: this.state.content
-    }
-    this.props.onUpdateLifeEvent(this.state.updatedLifeEvent, this.props.lifeEvent._id)
+  onInputChange(event){
+    console.log('changing a life event!')
     this.setState({
-      updatedLifeEvent: ''
+      updatedLifeEventTitle: event.target.value
+    })
+  }
+  onFormSubmit(event){
+    event.preventDefault()
+    console.log('edit life event form submitted')
+    this.props.onUpdateLifeEvent(this.state.updatedLifeEventTitle, this.props.lifeEvent._id)
+    this.setState({
+      updatedLifeEventTitle: ''
     })
   }
   render(){
     return (
       <div className='editLifeEventForm' data-lifeEvents-index={this.props.lifeEvent._id}>
-        <form onSubmit={e => this.onFormSubmit(e)}>
+        <form onSubmit={event => this.onFormSubmit(event)}>
           <input
-            onChange={e => { this.setState({ title: e.target.value }) }}
-            placeholder='Title...'
+            onChange={event => this.onInputChange(event)}
+            placeholder='Update...'
             type='text'
-            value={this.state.title} />
-          <input
-            onChange={e => { this.setState({ content: e.target.value }) } }
-            placeholder='Content...'
-            type='text'
-            value={this.state.content} />
+            value={this.state.updatedLifeEventTitle} />
           <button type='submit'>Update!</button>
         </form>
       </div>

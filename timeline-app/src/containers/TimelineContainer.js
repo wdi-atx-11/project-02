@@ -45,16 +45,15 @@ class TimelineContainer extends Component {
     })
   }
 
-  updateLifeEvent(newLifeEventTitle, newLifeEventContent, id) {
-    LifeEventModel.update(newLifeEventTitle, newLifeEventContent, id).then((res)=> {
+  updateLifeEvent(newLifeEventTitle, id) {
+    LifeEventModel.update(newLifeEventTitle, id).then((res)=> {
       console.log(res);
       let newLifeEvents = this.state.lifeEvents.map((lifeEvent) => {
         return lifeEvent
       });
       newLifeEvents.forEach((item)=>{
         if(item._id === id){
-          item.title = newLifeEventTitle,
-          item.content = newLifeEventContent
+          item.title = newLifeEventTitle
         }
       })
       this.setState({
@@ -70,7 +69,7 @@ class TimelineContainer extends Component {
           (this.state.currentUser != null) ?
           <CreateLifeEventForm
             createLifeEvent={this.createLifeEvent.bind(this)} /> :
-            <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
+          <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
         }
           <Timeline
             lifeEvents={this.state.lifeEvents}
