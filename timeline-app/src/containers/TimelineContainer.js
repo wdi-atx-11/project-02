@@ -21,8 +21,10 @@ class TimelineContainer extends Component {
     LifeEventModel.all().then( (res) => {
       this.setState ({
         lifeEvents: res.lifeEvents,
+        uid: res.lifeEvents.uid,
         currentUser: auth.currentUser
       })
+      console.log(this.state.lifeEvents[6].uid);
     })
   }
   createLifeEvent(newLifeEvent) {
@@ -55,6 +57,9 @@ class TimelineContainer extends Component {
             item.title = updatedLifeEvent.title;
             item.isPublic = updatedLifeEvent.isPublic;
             item.content = updatedLifeEvent.content;
+            item.tags = updatedLifeEvent.tags;
+            item.photo = updatedLifeEvent.photo;
+            item.userRating = updatedLifeEvent.userRating;
         }
       })
       //console.log(updatedLifeEvents);
@@ -64,6 +69,7 @@ class TimelineContainer extends Component {
 
 
   render(){
+    console.log(this.state.lifeEvents);
     return (
       <div className='timelineContainer'>
         {
