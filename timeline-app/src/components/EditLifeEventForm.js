@@ -30,8 +30,7 @@ class EditLifeEventForm extends Component {
     this.props.onUpdateLifeEvent(updatedLifeEvent, this.props.lifeEvent._id)
 
     this.setState({
-      title: '',
-      content: ''
+      updatedLifeEvent
     })
   }
   render(){
