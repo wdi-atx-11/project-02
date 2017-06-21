@@ -47,13 +47,13 @@ class TimelineContainer extends Component {
         return lifeEvent
       });
       updatedLifeEvents.forEach( (item) => {
-        if(item._id === id){
-          item.title = updatedLifeEvent.title;
-          item.content = updatedLifeEvent.content;
+        if(item._id === id) {
+            item.title = updatedLifeEvent.title;
+            item.content = updatedLifeEvent.content;
         }
       })
       //console.log(updatedLifeEvents);
-      this.setState({lifeEvents: updatedLifeEvents})
+      this.setState({updatedLifeEvents})
     })
   }
 

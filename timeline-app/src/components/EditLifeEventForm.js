@@ -12,9 +12,10 @@ class EditLifeEventForm extends Component {
     }
   }
   onTitleChange(e){
-    this.setState({
-      title: e.target.value
-    })
+      this.setState({
+        title: e.target.value
+      })
+
   }
   onContentChange(e){
     this.setState({
@@ -22,15 +23,17 @@ class EditLifeEventForm extends Component {
     })
   }
   onFormSubmit(e){
+
     e.preventDefault()
     let updatedLifeEvent = {
-      title: this.state.title,
-      content: this.state.content
+      title: this.state.title || this.props.lifeEvent.title,
+      content: this.state.content || this.props.lifeEvent.content
     }
     this.props.onUpdateLifeEvent(updatedLifeEvent, this.props.lifeEvent._id)
 
     this.setState({
-      updatedLifeEvent
+      title: '',
+      content: ''
     })
   }
   render(){
@@ -42,12 +45,12 @@ class EditLifeEventForm extends Component {
             placeholder='Update Title...'
             type='text'
             value={this.state.title} /> {'  '}
-            <textarea
-              onChange={event => this.onContentChange(event)}
-              placeholder='Update Content...'
-              type='text'
-              value={this.state.content} />{'  '}
-              <br />
+          <textarea
+            onChange={event => this.onContentChange(event)}
+            placeholder='Update Content...'
+            type='text'
+            value={this.state.content} />{'  '}
+            <br />
           <button className="btn btn-primary" type='submit'>Update!</button>
         </form>
       </div>
