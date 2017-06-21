@@ -50,7 +50,10 @@ class TimelineContainer extends Component {
       });
       updatedLifeEvents.forEach( (item) => {
         if(item._id === id) {
+            item.eventDate = updatedLifeEvent.eventDate;
+            item.postDate = updatedLifeEvent.postDate;
             item.title = updatedLifeEvent.title;
+            item.isPublic = updatedLifeEvent.isPublic;
             item.content = updatedLifeEvent.content;
         }
       })
@@ -67,8 +70,10 @@ class TimelineContainer extends Component {
           (this.state.currentUser != null) ?
           <div>
             <CreateLifeEventForm
+              currentUser= {this.state.currentUser}
               onCreateLifeEvent={this.createLifeEvent.bind(this)} />
             <Timeline
+              currentUser= {this.state.currentUser}
               lifeEvents={this.state.lifeEvents}
               onDeleteLifeEvent={this.deleteLifeEvent.bind(this)}
               onUpdateLifeEvent={this.updateLifeEvent.bind(this)}

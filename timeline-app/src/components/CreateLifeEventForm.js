@@ -9,7 +9,8 @@ class CreateLifeEventForm extends Component {
     // set initial state
     this.state = {
         title: '',
-        content: ''
+        content: '',
+        uid: ''
     }
   }
 
@@ -17,13 +18,15 @@ class CreateLifeEventForm extends Component {
     e.preventDefault()
     let newLifeEvent = {
       title: this.state.title,
-      content: this.state.content
+      content: this.state.content,
+      uid: this.props.currentUser.uid
     }
     this.props.onCreateLifeEvent(newLifeEvent)
 
     this.setState({
         title: '',
-        content: ''
+        content: '',
+        uid: ''
     })
 }
 
