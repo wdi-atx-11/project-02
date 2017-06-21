@@ -73,13 +73,6 @@ class CreateLifeEventForm extends Component {
 
             <div className="row">
               <input
-                type="checkbox"
-                value={ this.state.isPublic }
-                /> {' '} PUBLIC?
-            </div>
-
-            <div className="row">
-              <input
                 onChange={ e => { this.setState({ content: e.target.value }) } }
                 value={ this.state.content }
                 className="form-control"
@@ -114,6 +107,12 @@ class CreateLifeEventForm extends Component {
                 placeholder="Rate this event from your life on a scale from 1-10" />
             </div>
 
+            <div className="row">
+              <input
+                type="checkbox"
+                value={ this.state.isPublic }
+                /> {' '} PUBLIC?
+              </div>
 
             <div className="row">
               <button className="btn btn-primary">Add Life Event</button>
