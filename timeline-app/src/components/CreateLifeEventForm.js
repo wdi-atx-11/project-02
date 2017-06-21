@@ -7,10 +7,10 @@ class CreateLifeEventForm extends Component {
     // use Component's constructor
     super(props)
     // set initial state
-    var postDate = new Date().toISOString().slice(0,10);
+    var d = new Date().toISOString().slice(0,10);
     this.state = {
         eventDate: '',
-        postDate: postDate,
+        postDate: d,
         title: '',
         isPublic: false,
         content: '',
