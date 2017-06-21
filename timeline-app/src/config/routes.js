@@ -6,7 +6,7 @@ import TimelineContainer from '../containers/TimelineContainer'
 import GalleryContainer from '../containers/GalleryContainer'
 
 export default (
-  <Route path='/' component={App}>
+  <Route exact path='/' component={App}>
     <Route path='/timeline' component={TimelineContainer}/>
     <Route path='/gallery' component={GalleryContainer}/>
   </Route>

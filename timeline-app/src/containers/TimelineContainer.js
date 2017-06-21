@@ -13,13 +13,15 @@ class TimelineContainer extends Component {
       currentUser: auth.currentUser
     }
   }
+
   componentDidMount(){
     this.fetchData()
   }
   fetchData(){
     LifeEventModel.all().then( (res) => {
       this.setState ({
-        lifeEvents: res.lifeEvents
+        lifeEvents: res.lifeEvents,
+        currentUser: auth.currentUser
       })
     })
   }
@@ -57,20 +59,23 @@ class TimelineContainer extends Component {
     })
   }
 
+
   render(){
     return (
       <div className='timelineContainer'>
         {
           (this.state.currentUser != null) ?
-          <CreateLifeEventForm
-            onCreateLifeEvent={this.createLifeEvent.bind(this)} /> :
+          <div>
+            <CreateLifeEventForm
+              onCreateLifeEvent={this.createLifeEvent.bind(this)} />
+            <Timeline
+              lifeEvents={this.state.lifeEvents}
+              onDeleteLifeEvent={this.deleteLifeEvent.bind(this)}
+              onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
+            />
+          </div> :
           <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
         }
-        <Timeline
-          lifeEvents={this.state.lifeEvents}
-          onDeleteLifeEvent={this.deleteLifeEvent.bind(this)}
-          onUpdateLifeEvent={this.updateLifeEvent.bind(this)}
-        />
       </div>
     )
   }

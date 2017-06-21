@@ -1,8 +1,8 @@
 // src/App.js
 import React, { Component } from 'react'
-import Header from './components/Header'
 import { firebase, auth } from './utils/firebase'
-import Navbar from './components/Navbar';
+import Header from './components/Header'
+import Navbar from './components/Navbar'
 import './App.css';
 
 class App extends Component {
@@ -32,7 +32,6 @@ class App extends Component {
     // tell Firebase auth to log in with a popup and that provider
     auth.signInWithPopup(provider);
   }
-
 
   logoutButtonClicked(e) {
     // tell Firebase auth to log out
