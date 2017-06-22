@@ -4,6 +4,7 @@ import EditLifeEventForm from './EditLifeEventForm'
 import {auth} from '../utils/firebase'
 
 class LifeEvent extends Component {
+
   render() {
     return (
       <div>
@@ -12,7 +13,7 @@ class LifeEvent extends Component {
         <div className="row lifeEvent">
           <div className="col-md-11 col-sm-11 lifeEvent-text">
             <blockquote>
-              <p className="lifeEvent-eventDate"> EVENT DATE: <br /> { this.props.data.eventDate }</p>
+              <p className="lifeEvent-eventDate"> EVENT DATE: <br />{this.props.data.eventDate}</p>
               <p className="lifeEvent-postDate"> POST DATE: <br /> { this.props.data.postDate }</p>
               <p className="lifeEvent-title"> TITLE: <br /> { this.props.data.title }</p>
               <p className="lifeEvent-content"> CONTENT: <br /> { this.props.data.content }</p>
