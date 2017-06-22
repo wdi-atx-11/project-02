@@ -1,12 +1,39 @@
 import React, {Component} from 'react'
+import Timeline from '../components/Timeline'
+import LifeEventModel from '../models/LifeEvent'
+
 
 class GalleryContainer extends Component {
-  render() {
+  constructor(props){
+    super(props)
+    this.state = {
+      lifeEvents: []
+    }
+  }
+
+  componentDidMount(){
+    //this is dumb
+    this.fetchData()
+    this.fetchData()
+  }
+
+
+  fetchData(){
+    LifeEventModel.all().then( (res) => {
+      this.setState ({
+        lifeEvents: res.lifeEvents
+      })
+    })
+  }
+
+  render(){
     return (
-      <h1>
-        THIS IS THE GALLERY PAGE
-      </h1>
-    );
+      <div className='timelineContainer'>
+        <Timeline
+          lifeEvents={this.state.lifeEvents}
+        />
+      </div>
+    )
   }
 }
 
