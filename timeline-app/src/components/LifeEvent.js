@@ -15,8 +15,11 @@ class LifeEvent extends Component {
             <p className="lifeEvent-tags"> TAGS: <br /> { this.props.data.tags }</p>
             <p className="lifeEvent-photo"> PHOTO: <br /> { this.props.data.photo }</p>
             <p className="lifeEvent-userRating"> USER RATING: <br /> { this.props.data.userRating }</p>
-            <p className="lifeEvent-isPublic"> PUBLIC?: <br /> { this.props.data.isPublic }</p>
-
+            {
+              (this.props.data.isPublic === true) ?
+              <p className="lifeEvent-isPublic"> THIS POST IS PUBLIC </p> :
+              <p className="lifeEvent-isPublic"> THIS POST IS PRIVATE</p>
+            }
             <EditLifeEventForm
                 lifeEvent={this.props.data}
                 onUpdateLifeEvent={this.props.onUpdateLifeEvent}
