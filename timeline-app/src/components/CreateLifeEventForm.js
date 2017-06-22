@@ -39,11 +39,6 @@ class CreateLifeEventForm extends Component {
     }
   }
 
-  // handleFormSubmit = formSubmitEvent => {
-  //   formSubmitEvent.preventDefault();
-  //
-  // }
-
   createCheckbox = isPublic => (
     <Checkbox
       label={'Public? '}
@@ -53,10 +48,6 @@ class CreateLifeEventForm extends Component {
     />
   )
 
-  // createCheckboxes = () => (
-  //   items.map(this.createCheckbox)
-  // )
-
   onFormSubmit(e){
   e.preventDefault()
   for (const checkbox of this.selectedCheckboxes) {
@@ -64,8 +55,13 @@ class CreateLifeEventForm extends Component {
     console.log(checkbox, 'is selected.');
   }
 
+  let date = new Date(this.state.eventDate)
+  console.log(date);
+  let eventDateToNumber = Date.parse(date);
+  console.log(eventDateToNumber);
+
   let newLifeEvent = {
-    eventDate: this.state.eventDate,
+    eventDate: eventDateToNumber,
     postDate: this.state.postDate,
     title: this.state.title,
     isPublic: this.state.isPublic,
@@ -75,6 +71,7 @@ class CreateLifeEventForm extends Component {
     userRating: this.state.userRating,
     uid: this.props.currentUser.uid
   }
+
   this.props.onCreateLifeEvent(newLifeEvent)
 
   this.setState({
@@ -106,7 +103,8 @@ class CreateLifeEventForm extends Component {
                 rows="3"
                 placeholder="When did this happen?"
                 required
-                maxLength="20" />
+                type="date"
+               required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
             </div>
 
             <div className="row">

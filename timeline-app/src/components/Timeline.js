@@ -11,7 +11,7 @@ class Timeline extends Component {
         data={ lifeEvent }
         onUpdateLifeEvent={this.props.onUpdateLifeEvent}
         onDeleteLifeEvent={this.props.onDeleteLifeEvent}
-        uid={lifeEvent.uid} 
+        uid={lifeEvent.uid}
       />
     });
 
