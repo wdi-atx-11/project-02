@@ -59,6 +59,7 @@ class CreateLifeEventForm extends Component {
   onFormSubmit(e){
   e.preventDefault()
   for (const checkbox of this.selectedCheckboxes) {
+    (checkbox) ? this.state.isPublic = true : this.state.isPublic = false
     console.log(checkbox, 'is selected.');
   }
 
@@ -66,7 +67,7 @@ class CreateLifeEventForm extends Component {
     eventDate: this.state.eventDate,
     postDate: this.state.postDate,
     title: this.state.title,
-    isPublic: this.selectedCheckboxes,
+    isPublic: this.state.isPublic,
     content: this.state.content,
     tags: this.state.tags,
     photo: this.state.photo,
