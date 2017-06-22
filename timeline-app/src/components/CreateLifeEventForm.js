@@ -49,6 +49,7 @@ class CreateLifeEventForm extends Component {
       label={'Public? '}
       handleCheckboxChange={this.toggleCheckbox}
       key={'Public? '}
+      required
     />
   )
 
@@ -103,7 +104,9 @@ class CreateLifeEventForm extends Component {
                 value={ this.state.eventDate }
                 className="form-control"
                 rows="3"
-                placeholder="When did this happen?" />
+                placeholder="When did this happen?"
+                required
+                maxLength="20" />
             </div>
 
             <div className="row">
@@ -112,7 +115,9 @@ class CreateLifeEventForm extends Component {
                 value={ this.state.title }
                 className="form-control"
                 rows="3"
-                placeholder="Title" />
+                placeholder="Title"
+                required
+                maxLength="40" />
             </div>
 
             <div className="row">
@@ -121,7 +126,9 @@ class CreateLifeEventForm extends Component {
                 value={ this.state.content }
                 className="form-control"
                 rows="3"
-                placeholder="What happened..." />
+                placeholder="What happened..."
+                required
+                maxLength="1000" />
             </div>
 
             <div className="row">
@@ -130,7 +137,8 @@ class CreateLifeEventForm extends Component {
                 value={ this.state.tags }
                 className="form-control"
                 rows="3"
-                placeholder="Add some tags..." />
+                placeholder="Add some tags..."
+                maxLength="50" />
             </div>
 
             <div className="row">
@@ -148,7 +156,11 @@ class CreateLifeEventForm extends Component {
                 value={ this.state.userRating }
                 className="form-control"
                 rows="3"
-                placeholder="Rate this event from your life on a scale from 1-10" />
+                placeholder="Rate this event from your life on a scale from 1-10"
+                type="number"
+                min="1"
+                max="10"
+                required />
             </div>
 
             <div className="row">
