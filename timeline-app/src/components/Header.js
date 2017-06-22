@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import { auth } from '../utils/firebase'
 
 
+
 class Header extends Component{
   constructor(props){
     super(props)
@@ -14,7 +15,14 @@ class Header extends Component{
   render(){
     return (
       <div className="App">
-        {this.props.currentUser !=null ? <h2>Hello {this.props.currentUser.email}</h2> : <h1>You're a stranger.</h1>}
+        {
+          this.props.currentUser !=null ?
+          <h2>
+            Hello {this.props.currentUser.displayName} Welcome to re:Collections
+          </h2> :
+            <h1>You're a stranger.</h1>
+        }
+
       </div>
     )
   }

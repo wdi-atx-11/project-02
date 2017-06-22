@@ -18,7 +18,7 @@ class Navbar extends Component {
     } else {
       return (
         <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" /> { this.props.currentUser.email } is logged in <span className="caret"></span>
+          <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" /> { this.props.currentUser.displayName } is logged in <span className="caret"></span>
         </a>
       )
     }
@@ -35,8 +35,7 @@ class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link className="navbar-brand" to="/">Home || </Link>
-            <Link className="navbar-brand" to="/timeline">Timeline</Link>
+            <Link className="navbar-brand" to="/">RE:Collections </Link>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav navbar-right">
@@ -45,8 +44,12 @@ class Navbar extends Component {
                 <ul className="dropdown-menu">
                   <li><Link to="/">Home</Link></li>
                   <li role="separator" className="divider"></li>
-                    <li><Link to="/timeline">Timeline</Link></li>
-                    <li role="separator" className="divider"></li>
+                  <li><Link to="/timeline">Timeline</Link></li>
+                  <li role="separator" className="divider"></li>
+                  <li><Link to="/gallery">Public Gallery</Link></li>
+                  <li role="separator" className="divider"></li>
+                  <li><Link to="/about">About</Link></li>
+                  <li role="separator" className="divider"></li>
                   <li><LogoutButton { ...this.props }>Log out</LogoutButton></li>
                 </ul>
               </li>
