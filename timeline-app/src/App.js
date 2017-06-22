@@ -16,7 +16,6 @@ class App extends Component {
   componentWillMount() {
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
-        console.log('Logged in:', currentUser);
         // set currentUser in App component state
         this.setState({ currentUser });
       } else {

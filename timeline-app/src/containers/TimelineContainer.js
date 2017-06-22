@@ -15,16 +15,18 @@ class TimelineContainer extends Component {
   }
 
   componentDidMount(){
+    //this is dumb
+    this.fetchData()
     this.fetchData()
   }
+
+
   fetchData(){
     LifeEventModel.all().then( (res) => {
       this.setState ({
         lifeEvents: res.lifeEvents,
-        uid: res.lifeEvents.uid,
         currentUser: auth.currentUser
       })
-      console.log(this.state.lifeEvents[6].uid);
     })
   }
   createLifeEvent(newLifeEvent) {
@@ -69,7 +71,6 @@ class TimelineContainer extends Component {
 
 
   render(){
-    console.log(this.state.lifeEvents);
     return (
       <div className='timelineContainer'>
         {
