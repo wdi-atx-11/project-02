@@ -1,13 +1,23 @@
 // src/components/CreateTodoForm.js
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import Checkbox from './Checkbox'
+
+// const items = [
+//   'One',
+//   'Two',
+//   'Three',
+// ];
 
 // inside src/components/CreateLifeEventForm.js
 class CreateLifeEventForm extends Component {
+  componentWillMount = () => {
+    this.selectedCheckboxes = new Set();
+  }
   constructor(props){
     // use Component's constructor
     super(props)
-    // set initial state
     var d = new Date().toISOString().slice(0,10);
+    // set initial state
     this.state = {
         eventDate: '',
         postDate: d,
@@ -21,38 +31,71 @@ class CreateLifeEventForm extends Component {
     }
   }
 
-    onFormSubmit(e){
-    e.preventDefault()
-    let newLifeEvent = {
-      eventDate: this.state.eventDate,
-      postDate: this.state.postDate,
-      title: this.state.title,
-      isPublic: this.state.isPublic,
-      content: this.state.content,
-      tags: this.state.tags,
-      photo: this.state.photo,
-      userRating: this.state.userRating,
-      uid: this.props.currentUser.uid
+  toggleCheckbox = (label) => {
+    if (this.selectedCheckboxes.has(label)) {
+      this.selectedCheckboxes.delete(label);
+    } else {
+      this.selectedCheckboxes.add(label);
     }
-    this.props.onCreateLifeEvent(newLifeEvent)
+  }
 
-    this.setState({
-      eventDate: '',
-      postDate: '',
-      title: '',
-      isPublic: false,
-      content: '',
-      tags: '',
-      photo: '',
-      userRating: '',
-      uid: ''
-    })
+  // handleFormSubmit = formSubmitEvent => {
+  //   formSubmitEvent.preventDefault();
+  //
+  // }
+
+  createCheckbox = isPublic => (
+    <Checkbox
+      label={'Public? '}
+      handleCheckboxChange={this.toggleCheckbox}
+      key={'Public? '}
+    />
+  )
+
+  // createCheckboxes = () => (
+  //   items.map(this.createCheckbox)
+  // )
+
+  onFormSubmit(e){
+  e.preventDefault()
+  for (const checkbox of this.selectedCheckboxes) {
+    console.log(checkbox, 'is selected.');
+  }
+
+  let newLifeEvent = {
+    eventDate: this.state.eventDate,
+    postDate: this.state.postDate,
+    title: this.state.title,
+    isPublic: this.selectedCheckboxes,
+    content: this.state.content,
+    tags: this.state.tags,
+    photo: this.state.photo,
+    userRating: this.state.userRating,
+    uid: this.props.currentUser.uid
+  }
+  this.props.onCreateLifeEvent(newLifeEvent)
+
+  this.setState({
+    eventDate: '',
+    postDate: '',
+    title: '',
+    isPublic: false,
+    content: '',
+    tags: '',
+    photo: '',
+    userRating: '',
+    uid: ''
+  })
 }
 
     render() {
       return (
         <section className="col-md-4 col-sm-12 add-quote">
           <form onSubmit={ e => this.onFormSubmit(e) } className="form-add-lifeEvent">
+            <div className="row">
+              <div className="col-sm-12">
+              </div>
+            </div>
             <div className="row">
               <input
                 onChange={ e => { this.setState({ eventDate: e.target.value }) } }
@@ -108,11 +151,8 @@ class CreateLifeEventForm extends Component {
             </div>
 
             <div className="row">
-              <input
-                type="checkbox"
-                value={ this.state.isPublic }
-                /> {' '} PUBLIC?
-              </div>
+              {this.createCheckbox()}
+            </div>
 
             <div className="row">
               <button className="btn btn-primary">Add Life Event</button>

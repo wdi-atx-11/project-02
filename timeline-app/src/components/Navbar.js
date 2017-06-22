@@ -36,7 +36,7 @@ class Navbar extends Component {
               <span className="icon-bar"></span>
             </button>
             <Link className="navbar-brand" to="/">Home || </Link>
-            <Link className="navbar-brand" to="/timeline">Timeline</Link> 
+            <Link className="navbar-brand" to="/timeline">Timeline</Link>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav navbar-right">
