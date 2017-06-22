@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Timeline from '../components/Timeline'
+import Gallery from '../components/Gallery'
 import LifeEventModel from '../models/LifeEvent'
 
 
@@ -29,7 +29,7 @@ class GalleryContainer extends Component {
   render(){
     return (
       <div className='timelineContainer'>
-        <Timeline
+        <Gallery
           lifeEvents={this.state.lifeEvents}
         />
       </div>
