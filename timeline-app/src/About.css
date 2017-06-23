@@ -24,6 +24,7 @@ h3.mission {
 /*Technologies section*/
 h3.techText {
   display: flex;
+  padding-left: 35px;
   justify-content: left;
   font-family: 'Arimo', sans-serif;
   font-size: 30px;
@@ -93,6 +94,7 @@ p.stuff{
 }
 /*Team Name Styling*/
 p.team {
+  padding-top: 60px;
   font-family: 'Arimo', sans-serif;
   font-size: 30px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
@@ -119,6 +121,7 @@ p.team {
   height: 125px;
   width: 125px;
   border-radius: 50%;
+  border: 5px double black;
 }
 
 /*testimonial cirlces*/
@@ -142,6 +145,7 @@ p.team {
   right: 0;
   border-radius: 50%;
   background-color: #4267b2;
+  opacity: 0.8;
   overflow: hidden;
   width: 0;
   height: 100%;
@@ -217,19 +221,18 @@ h3.db{
 h3.headquarters{
   font-family: 'Arimo', sans-serif;
   font-size: 30px;
-  color:black;
+  color: black;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
   font-weight: 100;
-  margin-left: 37%;
+  text-align: left;
   text-decoration: underline;
   }
 
 /*headquarters section*/
 .hq{
-  margin-left: 15px;
-  background-image: url("/images/austin.jpg");
+  opacity: .7;
   background-size: cover;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
   width: 85%;
   height: 350px;
@@ -238,7 +241,9 @@ h3.headquarters{
 /**/
 ul.styling{
   padding-top: 5%;
-  color:#fff;
+  margin-left: -35px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+  color: black;
   font-family: 'Arimo', sans-serif;
   font-size: 23px;
   font-weight: 100;

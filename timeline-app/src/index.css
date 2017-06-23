@@ -3,7 +3,6 @@ body {
   padding-top: 70px;
   font-family: 'Arimo', sans-serif;
   background: #f5f5f5;
-
 }
 
 /*card area*/
@@ -23,7 +22,7 @@ body {
   padding-right: 0;
   /*box-shadow: 5px 5px 3px #888888;*/
   margin-bottom: 200px;
-    margin-left: 320px;
+    /*margin-left: 320px;*/
 
 }
 
@@ -73,6 +72,7 @@ p {
 
 .lifeEvent {
   box-shadow: 5px 5px 5px #888888;
+  width: 70%;
 }
 
 .timelinedate {
@@ -80,13 +80,19 @@ p {
   margin-top: -28px;
 }
 
+.real-line {
+  /*margin-left: 400px;*/
+}
+
+
 #arrow-line {
-  margin-left: -50px;
+    margin-left: -27px;
   height: 100%;
   margin-top: -50px;
   display: inline-block;
   position: fixed;
 }
+
 
 .timelinecirle {
   margin-left: -30px;
@@ -118,8 +124,8 @@ p {
 }
 
 .btn-danger {
-  margin-left:70px;
-  margin-top: -52px;
+  margin-left:0px;
+  margin-top: -25px;
 }
 
 .hideedit {
@@ -150,7 +156,7 @@ p {
 }
 
 .theline {
-  margin-right: -260px;
+  margin-left: -175px;
   margin-top: -500px;
 }
 
@@ -159,7 +165,7 @@ p {
 }
 
 #arrow-line {
-    margin-left: 132px;
+        margin-left: 232px;
     height: 100%;
     /* width: 100%; */
     /* width: 40px; */

@@ -100,7 +100,7 @@ class AboutContainer extends Component {
               <div className="hq">
                 <div className="letters">
                   <ul className="styling">We Work</ul>
-                  <ul className="styling">600 Congress Av</ul>
+                  <ul className="styling">600 Congress Ave</ul>
                   <ul className="styling">Austin, TX 78701<br/> USA</ul>
                 </div>
               </div>

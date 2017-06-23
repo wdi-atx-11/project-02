@@ -22,7 +22,7 @@ class Timeline extends Component {
             { lifeEventsArray }
 
           </div>
-          <div>
+          <div className=" real-line">
             <img id="arrow-line" src="images/line.png" />
           </div>
         </div>

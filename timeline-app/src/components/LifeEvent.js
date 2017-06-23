@@ -35,7 +35,7 @@ class LifeEvent extends Component {
 
               </div>
               </div>
-            <div className="col-sm-4 pull-right theline">
+            <div className="col-sm-2 pull-left theline">
               <img className="img-dash" src="images/dashline.png"></img>
             </div>
           </div> :
