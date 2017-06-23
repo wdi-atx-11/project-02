@@ -1,4 +1,185 @@
 body {
+  margin: 0;
   padding-top: 70px;
-  font-family: helvetica, sans-serif;
+  font-family: sans-serif;
+  background: #f5f5f5;
+
+}
+
+/*card area*/
+
+.timeline-wrapper {
+  padding-top: 100px;
+  margin-left: 280px;
+
+}
+
+.card {
+  background-color: white;
+
+  margin-top: 10px;
+
+  padding-left: 0;
+  padding-right: 0;
+  /*box-shadow: 5px 5px 3px #888888;*/
+  margin-bottom: 200px;
+    margin-left: 320px;
+
+}
+
+.card-img-top {
+  width: 100%;
+
+}
+
+
+
+.card-block {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card-title {
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+.card-text {
+  width: 100%;
+}
+
+h2 {
+ font-size: 25px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.cardfooter {
+  color: #9da4a5;
+}
+
+
+.imgdash {
+  /*width: 125px;
+  margin-left: 540px;*/
+  margin-top: 60px;
+}
+/*card area ends*/
+
+/*timeline.js*/
+
+.lifeEvent {
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.timelinedate {
+  margin-left: 15px;
+  margin-top: -28px;
+}
+
+#arrow-line {
+  margin-left: -50px;
+  height: 100%;
+  margin-top: -50px;
+  display: inline-block;
+  position: fixed;
+}
+
+.timelinecirle {
+  margin-left: -30px;
+}
+/*create lifeevent form*/
+.add-event {
+  margin: 0 auto;
+  /*background: red;*/
+}
+
+.h5 {
+  font-size: 20px;
+  margin-right: -920px;
+  margin-top: -66px;
+}
+
+/*editevent form*/
+.btn .btn-primary .updatebtn {
+  margin-left: 10px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  width: 70px;
+}
+
+
+
+.btn-success {
+  margin-left: -70px;
+}
+
+.btn-danger {
+  margin-left:70px;
+  margin-top: -52px;
+}
+
+.hideedit {
+  margin-bottom: 10px;
+}
+
+/*create event*/
+
+.modal-content {
+  max-width: 768px;
+  min-height: 417px;
+
+}
+
+.modal-body {
+  height: 290px;
+}
+
+.form-control {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.modalarea {
+  padding-top: 450px;
+  padding-left: 20px;
+  position: fixed;
+}
+
+.theline {
+  margin-right: -260px;
+  margin-top: -500px;
+}
+
+.img-dash {
+  margin-top: 60px;
+}
+
+#arrow-line {
+    margin-left: 132px;
+    height: 100%;
+    /* width: 100%; */
+    /* width: 40px; */
+    margin-top: -50px;
+    display: inline-block;
+    position: fixed;
+}
+
+input {
+  width: 90%;
+}
+
+.btn-primary {
+  border-radius: 3px;
+}
+
+.btn-update {
+  margin-left: -60px;
+}
+
+.btn-edit {
+  margin-top: -10px;
 }
