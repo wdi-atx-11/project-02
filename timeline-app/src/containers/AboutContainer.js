@@ -25,7 +25,7 @@ class AboutContainer extends Component {
 
           <section>
             <div className="tech">
-              <h3 className="mission">Technologies Used</h3>
+              <h3 className="techText">Technologies Used</h3>
               <ul className="lang">HTML</ul>
               <ul className="lang">CSS</ul>
               <ul className="lang">Javascript</ul>
@@ -86,11 +86,11 @@ class AboutContainer extends Component {
 
           <section>
             <div className="butwait">
-              <img className="img-circle" img src="images/derek.jpg" alt="Avatar"/>
-              <h3 className="db"> "Time Share is the best website I've ever used!" - Derek B.</h3>
-              <img className="img-circle" img src="images/benjamin.jpg" alt="Avatar"/>
-              <h3 className="db"> "Time Share changed my life forever!!" - Benjamin T.</h3>
-              <img className="img-circle" img src="images/Dane.jpg" alt="Avatar"/>
+              <img className="img-circle2" img src="images/derek.jpg" alt="Avatar"/>
+              <h3 className="db"> "TimeShare is the best website I've ever used!" - Derek B.</h3>
+              <img className="img-circle2" img src="images/benjamin.jpg" alt="Avatar"/>
+              <h3 className="db"> "TimeShare changed my life forever!!" - Benjamin T.</h3>
+              <img className="img-circle2" img src="images/Dane.jpg" alt="Avatar"/>
               <h3 className="db">"Hello, this is Dane" - Dane</h3>
             </div>
           </section>

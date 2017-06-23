@@ -14,7 +14,7 @@
 h3.mission {
   display: flex;
   justify-content: center;
-  font-family: cursive;
+  font-family: 'Arimo', sans-serif;
   font-size: 30px;
   color: #fff;
   text-decoration: underline;
@@ -22,6 +22,16 @@ h3.mission {
 }
 
 /*Technologies section*/
+h3.techText {
+  display: flex;
+  justify-content: left;
+  font-family: 'Arimo', sans-serif;
+  font-size: 30px;
+  color: #fff;
+  text-decoration: underline;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+}
+
 .tech{
   padding-top: 1px;
   background: url("/images/magic-phone.jpg");
@@ -35,13 +45,12 @@ h3.mission {
 /*UL classes*/
 .lang{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
-  color: #fff;
-  font-family: cursive;
+  color: white;
+  font-family: 'Arimo', sans-serif;
   font-size: 20px;
 }
-
 
 /*mword div*/
 .touch{
@@ -50,13 +59,12 @@ h3.mission {
 }
 /*mission statement*/
 p.mword {
-  font-family: cursive;
+  font-family: 'Arimo', sans-serif;
   font-size: 23px;
   font-weight: 100;
   color: #fff;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
 }
-
 
 /*about section*/
 .about {
@@ -69,7 +77,7 @@ p.mword {
 h3.statement{
   display: flex;
   justify-content: center;
-  font-family: Genath-Regular, serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 30px;
   text-decoration: underline;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
@@ -77,7 +85,7 @@ h3.statement{
 /*about statement*/
 p.stuff{
   margin-top: 75px;
-  font-family: Genath-Regular, serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 23px;
   font-weight: 100;
   margin-left: 17px
@@ -85,15 +93,15 @@ p.stuff{
 }
 /*Team Name Styling*/
 p.team {
-  font-family: Genath-Regular, serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 30px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
-  font-family: cursive;
   font-weight: 100;
   display: flex;
   justify-content: center;
   text-decoration: underline;
 }
+
 /*div class containing the team*/
 .us{
   padding: 1px;
@@ -104,6 +112,7 @@ p.team {
   height:400px;
   width: 100%;
 }
+
 /*cirle size*/
 .img-circle {
   margin-left: 26%;
@@ -111,9 +120,10 @@ p.team {
   width: 125px;
   border-radius: 50%;
 }
-  /*testimonial cirlces*/
+
+/*testimonial cirlces*/
 .img-circle2 {
-  margin-left: 13%;
+  margin-left: 65%;
   height: 125px;
   width: 125px;
   border-radius: 50%;
@@ -142,10 +152,9 @@ p.team {
   width: 125px;
 }
 
-
 .kenny {
   white-space: nowrap;
-  font-family: cursive;
+  font-family: 'Arimo', sans-serif;
   font-size: 20px;
   font-weight: 100;
   color: #fff;
@@ -163,7 +172,6 @@ p.team {
   width: 100%;
 }
 
-
 /*testimonals section*/
 .butwait{
   background: url("/images/office2.jpeg");
@@ -172,14 +180,13 @@ p.team {
   background-repeat: no-repeat;
   width: 100%;
   height: 645px;
-
 }
 
 /*Dont just take our word for it*/
 p.theresmore{
-  margin-left: 40%;
+  margin-left: 65%;
   margin-top: 3%;
-  font-family: Genath-Regular, serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 30px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
 }
@@ -189,7 +196,7 @@ h3.db{
   text-decoration: underline;
   color: #fff;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
-  margin-left: 83px;
+  margin-left: 65%;
 }
 
 .hqpic{
@@ -208,16 +215,14 @@ h3.db{
 
 /*headquarters*/
 h3.headquarters{
-  font-family: Genath-Regular, serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 30px;
-  color:#fff;
+  color:black;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
-  font-family: cursive;
   font-weight: 100;
-      margin-left: 37%;
+  margin-left: 37%;
   text-decoration: underline;
   }
-
 
 /*headquarters section*/
 .hq{
@@ -234,7 +239,7 @@ h3.headquarters{
 ul.styling{
   padding-top: 5%;
   color:#fff;
-  font-family: Genath-Regular, serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 23px;
   font-weight: 100;
 }
