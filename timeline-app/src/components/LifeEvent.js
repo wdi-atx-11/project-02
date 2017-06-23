@@ -10,34 +10,36 @@ class LifeEvent extends Component {
       <div>
       {
         (this.props.uid === auth.currentUser.uid) ?
-        <div className="row lifeEvent">
-          <div className="col-md-11 col-sm-11 lifeEvent-text">
-            <blockquote>
-              <p className="lifeEvent-eventDate"> EVENT DATE: <br />{this.props.data.eventDate}</p>
-              <p className="lifeEvent-postDate"> POST DATE: <br /> { this.props.data.postDate }</p>
-              <p className="lifeEvent-title"> TITLE: <br /> { this.props.data.title }</p>
-              <p className="lifeEvent-content"> CONTENT: <br /> { this.props.data.content }</p>
-              <p className="lifeEvent-tags"> TAGS: <br /> { this.props.data.tags }</p>
-              <p className="lifeEvent-photo"> PHOTO: <br /> { this.props.data.photo }</p>
-              <p className="lifeEvent-userRating"> USER RATING: <br /> { this.props.data.userRating }</p>
-              {
-                (this.props.data.isPublic === true) ?
-                <p className="lifeEvent-isPublic"> THIS POST IS PUBLIC </p> :
-                <p className="lifeEvent-isPublic"> THIS POST IS PRIVATE</p>
-              }
-              <EditLifeEventForm
+          <div className="row">
+            <div className="lifeEvent card pull-center">
+              <img className="card-img-top center-block img-frame" src={ this.props.data.photo }></img>
+
+              <div className="card-block">
+                <h2 className="card-title">{ this.props.data.title }</h2>
+                <h5 className="event-date" >{ this.props.data.eventDate }</h5><span className="pull-center">rating: { this.props.data.userRating }</span><br />
+                <p className="content">{ this.props.data.content }</p>
+
+                <span className="cardfooter postdate pull-left">Posted on { this.props.data.postDate }</span>
+                <span className="cardfooter pull-right ">Tag: { this.props.data.tags } </span><br/><hr/>
+
+                <EditLifeEventForm
                   lifeEvent={this.props.data}
                   onUpdateLifeEvent={this.props.onUpdateLifeEvent}
-              />
-              <button
-                  className='btn btn-danger'
+                  onDeleteLifeEvent={this.props.onDeleteLifeEvent}
+                  id={this.props.data._id}
+                />
+
+                <button className='btn btn-danger'
                   onClick={() => this.props.onDeleteLifeEvent(this.props.data)}>
                   Delete!
-              </button>
-            </blockquote>
-          </div>
-        </div>
-        :
+                </button>
+
+              </div>
+              </div>
+            <div className="col-sm-4 pull-right theline">
+              <img className="img-dash" src="images/dashline.png"></img>
+            </div>
+          </div> :
         <div></div>
       }
     </div>
