@@ -79,7 +79,6 @@ class TimelineContainer extends Component {
             (this.state.currentUser != null) ?
             <div className="noname">
 
-
               <Timeline
                 currentUser= {this.state.currentUser}
                 lifeEvents={this.state.lifeEvents}
@@ -89,7 +88,10 @@ class TimelineContainer extends Component {
             </div> :
             <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
           }
-          <CreateModal />
+          <CreateModal
+            currentUser= {this.state.currentUser}
+            createLifeEvent={this.createLifeEvent.bind(this)}
+           />
         </div>
       )
     }

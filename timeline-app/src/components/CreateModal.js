@@ -20,22 +20,16 @@ const CreateModal = React.createClass({
   },
 
 
-  createLifeEvent(newLifeEvent) {
-    LifeEventModel.create(newLifeEvent).then( (res) => {
-      console.log('created life event', res)
-      let lifeEvents = this.state.lifeEvents
-      let newTimeline = lifeEvents.push(res)
-      this.setState({newTimeline})
-    })
-  },
+  // createLifeEvent(newLifeEvent) {
+  //   LifeEventModel.create(newLifeEvent).then( (res) => {
+  //     console.log('created life event', res)
+  //     let lifeEvents = this.state.lifeEvents
+  //     let newTimeline = lifeEvents.push(res)
+  //     this.setState({newTimeline})
+  //   })
+  // },
 
   render() {
-
-    const tooltip = (
-      <Tooltip id="modal-tooltip">
-        wow.
-      </Tooltip>
-    );
 
     return (
       <div className="modalarea">
@@ -54,8 +48,8 @@ const CreateModal = React.createClass({
           <Modal.Body>
 
             <CreateLifeEventForm
-              currentUser= {this.state.currentUser}
-              onCreateLifeEvent={this.createLifeEvent.bind(this)}
+              currentUser= {this.props.currentUser}
+              createLifeEvent={this.props.createLifeEvent}
               close = {this.close}
 
             />
