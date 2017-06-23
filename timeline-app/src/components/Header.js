@@ -1,7 +1,7 @@
 // src/components/Header.js
 import React, {Component} from 'react'
 import { auth } from '../utils/firebase'
-
+import './Header.css';
 
 
 class Header extends Component{
@@ -17,10 +17,12 @@ class Header extends Component{
       <div className="App">
         {
           this.props.currentUser !=null ?
-          <h2>
-            Hello {this.props.currentUser.displayName} Welcome to TimeShare
-          </h2> :
-          <h4>Interested in using TimeShare? Login/Signup using our form at the top of the page!</h4>
+          <div>
+            <h3 className="events">TimeShare: Share your events and moments to the world!</h3>
+          </div> :
+          <div className="title">
+            <h4 className="events">Interested in using TimeShare? Login/Signup using our form at the top of the page!</h4>
+          </div>
         }
 
       </div>
