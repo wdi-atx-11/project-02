@@ -20,7 +20,7 @@ class Header extends Component{
           <h2>
             Hello {this.props.currentUser.displayName} Welcome to TimeShare
           </h2> :
-            <h1>You're a stranger.</h1>
+          <h4>Interested in using TimeShare? Login/Signup using our form at the top of the page!</h4>
         }
 
       </div>

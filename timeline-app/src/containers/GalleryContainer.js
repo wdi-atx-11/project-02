@@ -3,6 +3,7 @@ import LifeEventModel from '../models/LifeEvent'
 import Gallery from '../components/Gallery'
 import { auth } from '../utils/firebase'
 
+let GAL_EVENTS = []
 
 class GalleryContainer extends Component {
   constructor(props){
@@ -17,12 +18,14 @@ class GalleryContainer extends Component {
     //this is dumb
     this.fetchData()
     this.fetchData()
-    console.log("USER: ", auth.currentUser);
+    console.log("Life Events: ", this.lifeEvents);
   }
 
 
   fetchData(){
     LifeEventModel.allGallery().then( (res) => {
+      GAL_EVENTS = res.lifeEvents
+      console.log(GAL_EVENTS);
       this.setState ({
         lifeEvents: res.lifeEvents,
         currentUser: auth.currentUser
@@ -32,16 +35,9 @@ class GalleryContainer extends Component {
 
   render(){
     return (
-      <div className='timelineContainer'>
-      {
-        (this.state.currentUser != null) ?
-        <Gallery
-          currentUser= {this.state.currentUser}
-          lifeEvents={this.state.lifeEvents}
-        /> :
-        <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
-      }
-    </div>
+      <Gallery
+        lifeEvents={GAL_EVENTS}
+      />
     )
   }
 }

@@ -11,7 +11,6 @@ class Gallery extends Component {
         data={ lifeEvent }
       />
     });
-
     return (
       <section className="col-md-8 col-sm-12 timeline">
         { lifeEventsGalleryArray }

@@ -91,9 +91,8 @@ class CreateLifeEventForm extends Component {
                 className="form-control"
                 rows="3"
                 placeholder="When did this happen?"
-                required
                 type="date"
-               required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+                required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
             </div>
 
             <div className="row">
