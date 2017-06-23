@@ -31,6 +31,7 @@ class GalleryContainer extends Component {
       <div className='timelineContainer'>
         <Gallery
           lifeEvents={this.state.lifeEvents}
+          currentUser= {this.state.currentUser}
         />
       </div>
     )

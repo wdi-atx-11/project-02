@@ -9,6 +9,7 @@ class Gallery extends Component {
       return <LifeEvent
         key={ lifeEvent._id }
         data={ lifeEvent }
+        uid={lifeEvent.uid}
       />
     });
 

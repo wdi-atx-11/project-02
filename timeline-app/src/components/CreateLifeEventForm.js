@@ -2,12 +2,6 @@
 import React, {Component} from 'react'
 import Checkbox from './Checkbox'
 
-// const items = [
-//   'One',
-//   'Two',
-//   'Three',
-// ];
-
 // inside src/components/CreateLifeEventForm.js
 class CreateLifeEventForm extends Component {
   componentWillMount = () => {
@@ -55,13 +49,8 @@ class CreateLifeEventForm extends Component {
     console.log(checkbox, 'is selected.');
   }
 
-  let date = new Date(this.state.eventDate)
-  console.log(date);
-  let eventDateToNumber = Date.parse(date);
-  console.log(eventDateToNumber);
-
   let newLifeEvent = {
-    eventDate: eventDateToNumber,
+    eventDate: this.state.eventDate,
     postDate: this.state.postDate,
     title: this.state.title,
     isPublic: this.state.isPublic,

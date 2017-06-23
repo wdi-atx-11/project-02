@@ -6,9 +6,6 @@ import LifeEvent from './LifeEvent'
 class Timeline extends Component {
   render() {
     let lifeEventsArray = this.props.lifeEvents.map(lifeEvent => {
-
-      lifeEvent.eventDate = new Date(lifeEvent.eventDate).toISOString().slice(0,10);
-
       return <LifeEvent
         key={ lifeEvent._id }
         data={ lifeEvent }
