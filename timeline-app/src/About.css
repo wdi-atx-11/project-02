@@ -1,0 +1,240 @@
+.purple{
+  background: url("/images/purple-people.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:white;
+  padding-top: 233px;
+  padding-bottom: 144px;
+  width: 100%;
+}
+
+/*Our Mission Text*/
+h3.mission {
+  display: flex;
+  justify-content: center;
+  font-family: cursive;
+  font-size: 30px;
+  color: #fff;
+  text-decoration: underline;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+}
+
+/*Technologies section*/
+.tech{
+  padding-top: 1px;
+  background: url("/images/magic-phone.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:369px;
+  width: 100%;
+}
+
+/*UL classes*/
+.lang{
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+  color: #fff;
+  font-family: cursive;
+  font-size: 20px;
+}
+
+
+/*mword div*/
+.touch{
+  display: flex;
+  justify-content: center;
+}
+/*mission statement*/
+p.mword {
+  font-family: cursive;
+  font-size: 23px;
+  font-weight: 100;
+  color: #fff;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+}
+
+
+/*about section*/
+.about {
+  background-color: #f7f7f7;
+  padding-top: 15px;
+  height: 350px;
+}
+
+/*About*/
+h3.statement{
+  display: flex;
+  justify-content: center;
+  font-family: Genath-Regular, serif;
+  font-size: 30px;
+  text-decoration: underline;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+}
+/*about statement*/
+p.stuff{
+  margin-top: 75px;
+  font-family: Genath-Regular, serif;
+  font-size: 23px;
+  font-weight: 100;
+  margin-left: 17px
+
+}
+/*Team Name Styling*/
+p.team {
+  font-family: Genath-Regular, serif;
+  font-size: 30px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+  font-family: cursive;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+/*div class containing the team*/
+.us{
+  padding: 1px;
+  background: url("/images/office.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:400px;
+  width: 100%;
+}
+/*cirle size*/
+.img-circle {
+  margin-left: 26%;
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+}
+  /*testimonial cirlces*/
+.img-circle2 {
+  margin-left: 13%;
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  margin-top: 12px;
+}
+/*all features made to animate*/
+.hover {
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 26%;
+  right: 0;
+  border-radius: 50%;
+  background-color: #4267b2;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.hover:hover .overlay {
+  width: 125px;
+}
+
+
+.kenny {
+  white-space: nowrap;
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: 100;
+  color: #fff;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.hover {
+  position: relative;
+  width: 100%;
+}
+
+
+/*testimonals section*/
+.butwait{
+  background: url("/images/office2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 645px;
+
+}
+
+/*Dont just take our word for it*/
+p.theresmore{
+  margin-left: 40%;
+  margin-top: 3%;
+  font-family: Genath-Regular, serif;
+  font-size: 30px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+}
+
+/*testimonails h3*/
+h3.db{
+  text-decoration: underline;
+  color: #fff;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+  margin-left: 83px;
+}
+
+.hqpic{
+  padding-top: 1px;
+  background-color:  #222222;
+  min-height: 461px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+}
+/*positiong for the cirlce pictures*/
+.move{
+  margin-left: 13%;
+  margin-top: 5%;
+}
+
+/*headquarters*/
+h3.headquarters{
+  font-family: Genath-Regular, serif;
+  font-size: 30px;
+  color:#fff;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.64);
+  font-family: cursive;
+  font-weight: 100;
+      margin-left: 37%;
+  text-decoration: underline;
+  }
+
+
+/*headquarters section*/
+.hq{
+  margin-left: 15px;
+  background-image: url("/images/austin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 85%;
+  height: 350px;
+}
+
+/**/
+ul.styling{
+  padding-top: 5%;
+  color:#fff;
+  font-family: Genath-Regular, serif;
+  font-size: 23px;
+  font-weight: 100;
+}
