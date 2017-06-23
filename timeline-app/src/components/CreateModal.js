@@ -19,16 +19,6 @@ const CreateModal = React.createClass({
     this.setState({ showModal: true });
   },
 
-
-  // createLifeEvent(newLifeEvent) {
-  //   LifeEventModel.create(newLifeEvent).then( (res) => {
-  //     console.log('created life event', res)
-  //     let lifeEvents = this.state.lifeEvents
-  //     let newTimeline = lifeEvents.push(res)
-  //     this.setState({newTimeline})
-  //   })
-  // },
-
   render() {
 
     return (
@@ -51,7 +41,6 @@ const CreateModal = React.createClass({
               currentUser= {this.props.currentUser}
               createLifeEvent={this.props.createLifeEvent}
               close = {this.close}
-
             />
 
           </Modal.Body>

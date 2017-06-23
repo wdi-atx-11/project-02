@@ -17,7 +17,7 @@ class Timeline extends Component {
 
     return (
       <div className="timeline row">
-          <div className="timeline-card timeline pull-left col-sm-8">
+          <div className="timeline-card timeline pull-right col-sm-8">
 
             { lifeEventsArray }
 
