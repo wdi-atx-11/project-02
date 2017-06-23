@@ -16,9 +16,16 @@ class Timeline extends Component {
     });
 
     return (
-      <section className="col-md-8 col-sm-12 timeline">
-        { lifeEventsArray }
-      </section>
+      <div className="timeline row">
+          <div className="timeline-card timeline pull-left col-sm-8">
+
+            { lifeEventsArray }
+
+          </div>
+          <div>
+            <img id="arrow-line" src="images/line.png" />
+          </div>
+        </div>
     );
   }
 }
