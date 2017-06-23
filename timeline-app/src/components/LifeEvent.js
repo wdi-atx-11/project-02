@@ -13,6 +13,10 @@ class LifeEvent extends Component {
           <div className="row">
             <div className="lifeEvent card pull-center">
               <img className="card-img-top center-block img-frame" src={ this.props.data.photo }></img>
+                <button className='btn btn-danger'
+                  onClick={() => this.props.onDeleteLifeEvent(this.props.data)}>
+                  X
+                </button>
 
               <div className="card-block">
                 <h2 className="card-title">{ this.props.data.title }</h2>
@@ -28,11 +32,6 @@ class LifeEvent extends Component {
                   onDeleteLifeEvent={this.props.onDeleteLifeEvent}
                   id={this.props.data._id}
                 />
-
-                <button className='btn btn-danger'
-                  onClick={() => this.props.onDeleteLifeEvent(this.props.data)}>
-                  Delete!
-                </button>
 
               </div>
               </div>
