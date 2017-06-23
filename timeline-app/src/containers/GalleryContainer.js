@@ -1,13 +1,15 @@
 import React, {Component} from 'react'
-import Gallery from '../components/Gallery'
 import LifeEventModel from '../models/LifeEvent'
+import Gallery from '../components/Gallery'
+import { auth } from '../utils/firebase'
 
 
 class GalleryContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      lifeEvents: []
+      lifeEvents: [],
+      currentUser: auth.currentUser
     }
   }
 
@@ -15,13 +17,15 @@ class GalleryContainer extends Component {
     //this is dumb
     this.fetchData()
     this.fetchData()
+    console.log("USER: ", auth.currentUser);
   }
 
 
   fetchData(){
-    LifeEventModel.all().then( (res) => {
+    LifeEventModel.allGallery().then( (res) => {
       this.setState ({
-        lifeEvents: res.lifeEvents
+        lifeEvents: res.lifeEvents,
+        currentUser: auth.currentUser
       })
     })
   }
@@ -29,11 +33,15 @@ class GalleryContainer extends Component {
   render(){
     return (
       <div className='timelineContainer'>
+      {
+        (this.state.currentUser != null) ?
         <Gallery
-          lifeEvents={this.state.lifeEvents}
           currentUser= {this.state.currentUser}
-        />
-      </div>
+          lifeEvents={this.state.lifeEvents}
+        /> :
+        <section className="col-md-4 col-sm-12 add-event">Log in to add a life event</section>
+      }
+    </div>
     )
   }
 }

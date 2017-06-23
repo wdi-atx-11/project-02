@@ -35,7 +35,7 @@ class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link className="navbar-brand" to="/">RE:Collections </Link>
+            <Link className="navbar-brand" to="/">TimeShare</Link>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav navbar-right">

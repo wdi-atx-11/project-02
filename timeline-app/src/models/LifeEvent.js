@@ -9,6 +9,14 @@ class LifeEventModel {
     return request
   }
 
+  static allGallery(){
+    let request = $.ajax({
+      url: "https://timeline--app.herokuapp.com/gallery",
+      method: 'GET'
+    })
+    return request
+  }
+
   static create(newLifeEvent) {
     let request = $.ajax({
       url: "https://timeline--app.herokuapp.com/lifeevents",

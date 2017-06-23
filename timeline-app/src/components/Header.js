@@ -18,7 +18,7 @@ class Header extends Component{
         {
           this.props.currentUser !=null ?
           <h2>
-            Hello {this.props.currentUser.displayName} Welcome to re:Collections
+            Hello {this.props.currentUser.displayName} Welcome to TimeShare
           </h2> :
             <h1>You're a stranger.</h1>
         }
